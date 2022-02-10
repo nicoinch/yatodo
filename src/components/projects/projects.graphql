@@ -1,0 +1,30 @@
+query projects {
+    projects {
+        id
+        is_active
+        name
+        color
+    }
+}
+
+mutation insertProjects ($name: String!, $color: String!) {
+    insert_projects(objects: [{name: $name, color: $color, is_active: true}]) {
+        returning {
+            id
+            is_active
+            name
+            color
+            created_at
+            updated_at
+        }
+    }
+}
+
+subscription allProjects {
+    projects {
+        id
+        is_active
+        name
+        color
+    }
+}
