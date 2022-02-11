@@ -114,7 +114,7 @@ module.exports = {
         },
       },
       fontFamily: {
-        sans: ['Gudea', 'ui-sans-serif', 'system-ui'],
+        sans: ['Roboto'],
       },
     },
   },

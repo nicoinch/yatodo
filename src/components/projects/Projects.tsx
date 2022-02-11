@@ -18,6 +18,8 @@ export const ProjectsList = () => {
     return <p>Loading...</p>;
   }
 
+  console.log(result.data);
+
   return (
     <div className="w-full">
       <ul>
@@ -42,10 +44,17 @@ export const ProjectsList = () => {
           value={projectColor}
           onChange={(event) => setProjectColor(event.currentTarget.value)}
         >
-          <option value="coral">Coral</option>
-          <option value="aquamarine">Aquamarine</option>
+          <option value="blue">Blue</option>
+          <option value="teal">Teal</option>
           <option value="green">Green</option>
           <option value="yellow">Yellow</option>
+          <option value="indigo">Indigo</option>
+          <option value="purple">Purple</option>
+          <option value="cerise">Cerise</option>
+          <option value="coral">Coral</option>
+          <option value="ochre">Ochre</option>
+          <option value="gold">Gold</option>
+          <option value="lime">Lime</option>
         </select>
         <button
           type="submit"
