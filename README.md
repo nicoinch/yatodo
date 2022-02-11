@@ -44,3 +44,8 @@ You don’t have to ever use `eject`. The curated feature set is suitable for sm
 You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
 To learn React, check out the [React documentation](https://reactjs.org/).
+
+## Get the graphql schema
+
+To get the graphql schema, run:
+`gq https://hiring-nicolas-2.hasura.app/v1/graphql --introspect --format json > schema.json`

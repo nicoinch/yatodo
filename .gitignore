@@ -39,4 +39,4 @@ node_modules
 package-lock.json
 
 # GraphQL generated types
-./src/generated.ts
+/src/generated.ts
