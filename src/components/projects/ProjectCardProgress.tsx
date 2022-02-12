@@ -18,7 +18,6 @@ interface ProjectCardProgressProps {
  * bg-ochre-200 bg-ochre-700
  * bg-gold-200 bg-gold-700
  * bg-lime-200 bg-lime-700
- *
  */
 const ProjectCardProgress: FC<ProjectCardProgressProps> = (props): ReactElement => {
   let progress: ReactElement = <span />;

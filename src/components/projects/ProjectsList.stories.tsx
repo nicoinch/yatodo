@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import ProjectsList from './ProjectsList';
+import Button from '../buttons/Button';
 import { Projects } from '../../generated';
 
 export default {
@@ -84,8 +85,8 @@ export const AddProjects = () => {
         id: projects.length + 1,
         is_active: true,
         name: 'Project ' + (projects.length + 1),
-        color: ['teal', 'blue', 'indigo', 'purple', 'cerise', 'coral', 'ochre', 'gold', 'lime'][
-          projects.length + (1 % 9)
+        color: ['teal', 'lime', 'blue', 'purple', 'indigo', 'cerise', 'ochre', 'coral', 'gold'][
+          (projects.length + 1) % 9
         ],
         created_at: '2020-01-01T00:00:00Z',
         updated_at: '2020-01-01T00:00:00Z',
@@ -97,13 +98,7 @@ export const AddProjects = () => {
   return (
     <div className="bg-teal-100 p-12">
       <ProjectsList projects={projects} />
-      <button
-        type="button"
-        className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
-        onClick={addProject}
-      >
-        Add project
-      </button>
+      <Button label="Add project" onClick={addProject} />
     </div>
   );
 };

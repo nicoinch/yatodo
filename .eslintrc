@@ -23,5 +23,6 @@
   "rules": {
     "react/react-in-jsx-scope": "off",
     "prettier/prettier": ["error", { "singleQuote": true, "parser": "flow" }]
-  }
+  },
+  "ignorePatterns": ["src/generated.ts"]
 }

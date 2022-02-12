@@ -20,13 +20,12 @@ interface ProjectCardProps {
  * bg-ochre-100 bg-ochre-200 bg-ochre-700 text-ochre-200 text-ochre-700
  * bg-gold-100 bg-gold-200 bg-gold-700 text-gold-200 text-gold-700
  * bg-lime-100 bg-lime-200 bg-lime-700 text-lime-200 text-lime-700
- *
  */
 const ProjectCard: FC<ProjectCardProps> = (props) => {
   return (
     <div
       className={`font-sans ${
-        props.dark ? `bg-black text-${props.color}-200` : `bg-white text-${props.color}-700`
+        props.dark ? `bg-teal-900 text-${props.color}-200` : `bg-white text-${props.color}-700`
       } rounded-xl w-full grid overflow-hidden`}
     >
       <div className="p-3 pb-0">

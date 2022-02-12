@@ -19,7 +19,7 @@ export const Showcase = () => (
       <ProjectCard title={'Project gold'} color={'gold'} />
       <ProjectCard title={'Project lime'} color={'lime'} />
     </div>
-    <div className="grid bg-teal-900 gap-4 md:grid-cols-4 p-4">
+    <div className="grid bg-teal-800 gap-4 md:grid-cols-4 p-4">
       <ProjectCard title={'Project teal'} color={'teal'} dark />
       <ProjectCard title={'Project blue'} color={'blue'} dark />
       <ProjectCard title={'Project indigo'} color={'indigo'} dark />
