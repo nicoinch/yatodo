@@ -18,6 +18,7 @@ export const Showcase = () => (
       <Button label={'Project ochre'} color={'ochre'} />
       <Button label={'Project gold'} color={'gold'} />
       <Button label={'Project lime'} color={'lime'} />
+      <Button label={'Project gray'} color={'gray'} />
     </div>
     <div className="grid bg-gray-800 gap-4 md:grid-cols-4 p-4">
       <Button label={'Project teal'} color={'teal'} dark />
@@ -29,6 +30,7 @@ export const Showcase = () => (
       <Button label={'Project ochre'} color={'ochre'} dark />
       <Button label={'Project gold'} color={'gold'} dark />
       <Button label={'Project lime'} color={'lime'} dark />
+      <Button label={'Project gray'} color={'gray'} dark />
     </div>
   </div>
 );
@@ -54,6 +56,30 @@ export const States = () => (
       <Button label={'Project gold'} color={'gold'} disabled />
       <Button label={'Project lime'} color={'lime'} />
       <Button label={'Project lime'} color={'lime'} disabled />
+      <Button label={'Project gray'} color={'gray'} />
+      <Button label={'Project gray'} color={'gray'} disabled />
+    </div>
+    <div className="grid bg-gray-100 gap-4 md:grid-cols-4 p-4">
+      <Button label={'Project teal'} color={'teal'} outlined />
+      <Button label={'Project teal'} color={'teal'} outlined disabled />
+      <Button label={'Project blue'} color={'blue'} outlined />
+      <Button label={'Project blue'} color={'blue'} outlined disabled />
+      <Button label={'Project indigo'} color={'indigo'} outlined />
+      <Button label={'Project indigo'} color={'indigo'} outlined disabled />
+      <Button label={'Project purple'} color={'purple'} outlined />
+      <Button label={'Project purple'} color={'purple'} outlined disabled />
+      <Button label={'Project cerise'} color={'cerise'} outlined />
+      <Button label={'Project cerise'} color={'cerise'} outlined disabled />
+      <Button label={'Project coral'} color={'coral'} outlined />
+      <Button label={'Project coral'} color={'coral'} outlined disabled />
+      <Button label={'Project ochre'} color={'ochre'} outlined />
+      <Button label={'Project ochre'} color={'ochre'} outlined disabled />
+      <Button label={'Project gold'} color={'gold'} outlined />
+      <Button label={'Project gold'} color={'gold'} outlined disabled />
+      <Button label={'Project lime'} color={'lime'} outlined />
+      <Button label={'Project lime'} color={'lime'} outlined disabled />
+      <Button label={'Project gray'} color={'gray'} outlined />
+      <Button label={'Project gray'} color={'gray'} outlined disabled />
     </div>
     <div className="grid bg-gray-800 gap-4 md:grid-cols-4 p-4">
       <Button label={'Project teal'} color={'teal'} dark />
@@ -74,6 +100,30 @@ export const States = () => (
       <Button label={'Project gold'} color={'gold'} dark disabled />
       <Button label={'Project lime'} color={'lime'} dark />
       <Button label={'Project lime'} color={'lime'} dark disabled />
+      <Button label={'Project gray'} color={'gray'} dark />
+      <Button label={'Project gray'} color={'gray'} dark disabled />
+    </div>
+    <div className="grid bg-gray-800 gap-4 md:grid-cols-4 p-4">
+      <Button label={'Project teal'} color={'teal'} dark outlined />
+      <Button label={'Project teal'} color={'teal'} dark outlined disabled />
+      <Button label={'Project blue'} color={'blue'} dark outlined />
+      <Button label={'Project blue'} color={'blue'} dark outlined disabled />
+      <Button label={'Project indigo'} color={'indigo'} dark outlined />
+      <Button label={'Project indigo'} color={'indigo'} dark outlined disabled />
+      <Button label={'Project purple'} color={'purple'} dark outlined />
+      <Button label={'Project purple'} color={'purple'} dark outlined disabled />
+      <Button label={'Project cerise'} color={'cerise'} dark outlined />
+      <Button label={'Project cerise'} color={'cerise'} dark outlined disabled />
+      <Button label={'Project coral'} color={'coral'} dark outlined />
+      <Button label={'Project coral'} color={'coral'} dark outlined disabled />
+      <Button label={'Project ochre'} color={'ochre'} dark outlined />
+      <Button label={'Project ochre'} color={'ochre'} dark outlined disabled />
+      <Button label={'Project gold'} color={'gold'} dark outlined />
+      <Button label={'Project gold'} color={'gold'} dark outlined disabled />
+      <Button label={'Project lime'} color={'lime'} dark outlined />
+      <Button label={'Project lime'} color={'lime'} dark outlined disabled />
+      <Button label={'Project gray'} color={'gray'} dark outlined />
+      <Button label={'Project gray'} color={'gray'} dark outlined disabled />
     </div>
   </div>
 );

@@ -39,7 +39,11 @@ const Check: FC<CheckProps> = (props): ReactElement => {
             cy="16"
             r="16"
             style={{
-              fill: props.done ? theme.extend.colors[props.color]!['200'] : 'none',
+              fill: props.done
+                ? props.dark
+                  ? theme.extend.colors[props.color]!['300']
+                  : theme.extend.colors[props.color]!['600']
+                : 'none',
               stroke: props.done
                 ? 'none'
                 : props.dark
