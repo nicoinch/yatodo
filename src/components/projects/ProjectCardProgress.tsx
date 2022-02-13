@@ -5,6 +5,7 @@ interface ProjectCardProgressProps {
   color?: string;
   progress?: number;
   progressTotal?: number;
+  done?: boolean;
 }
 
 /**
@@ -24,14 +25,18 @@ const ProjectCardProgress: FC<ProjectCardProgressProps> = (props): ReactElement 
   if (props.progress && props.progressTotal) {
     progress = (
       <div
-        className={`h-1 w-full font-light relative ${
-          props.dark ? `bg-${props.color}-700` : `bg-${props.color}-200`
-        }
-        }`}
+        className={`h-1 w-full font-light relative ${props.dark ? `bg-gray-600` : `bg-gray-200`}
+        `}
       >
         <div
-          className={`h-2 absolute ${
-            props.dark ? `bg-${props.color}-200` : `bg-${props.color}-700`
+          className={`h-1 absolute ${
+            props.dark
+              ? props.done
+                ? 'bg-gray-200'
+                : `bg-${props.color}-200`
+              : props.done
+              ? 'bg-gray-700'
+              : `bg-${props.color}-700`
           }`}
           style={{
             width: `${(props?.progress / props?.progressTotal) * 100}%`,
@@ -48,6 +53,7 @@ ProjectCardProgress.defaultProps = {
   color: 'teal',
   progress: 1,
   progressTotal: 2,
+  done: false,
 };
 
 export default ProjectCardProgress;

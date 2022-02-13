@@ -7,6 +7,7 @@ interface ProjectCardProps {
   color?: string;
   progress?: number;
   progressTotal?: number;
+  done?: boolean;
 }
 
 /**
@@ -24,17 +25,38 @@ interface ProjectCardProps {
 const ProjectCard: FC<ProjectCardProps> = (props) => {
   return (
     <div
-      className={`font-sans ${
-        props.dark ? `bg-teal-900 text-${props.color}-200` : `bg-white text-${props.color}-700`
-      } rounded-xl w-full grid overflow-hidden`}
+      className={`font-sans 
+          ${
+            props.dark
+              ? props.done
+                ? `bg-gray-900 text-gray-200 italic`
+                : `bg-gray-900 text-${props.color}-200`
+              : props.done
+              ? `bg-white text-gray-700 italic`
+              : `bg-white text-${props.color}-700`
+          } rounded-xl w-full grid overflow-hidden relative`}
     >
+      {props.done && <div className="absolute inset-0 opacity-50 bg-gray-200 z-10" />}
       <div className="p-3 pb-0">
         <div className={`font-bold text-sm pb-6`}>{props.title}</div>
-        <div>
-          <span className={`font-bold text-sm`}>
-            {props.progress}/{props.progressTotal}
-          </span>
-          <span className={`text-xs`}>&nbsp;tasks done</span>
+        <div className="flex w-full">
+          <div className="flex-grow">
+            <span className={`font-bold text-sm`}>
+              {props.progress}/{props.progressTotal}
+            </span>
+            <span className={`text-xs`}>&nbsp;tasks done</span>
+          </div>
+          <div
+            className={`text-xs not-italic z-20 p-1 mb-1 rounded ${
+              props.done ? 'visible' : 'invisible'
+            } ${
+              props.dark
+                ? `bg-${props.color}-200 text-gray-500`
+                : `bg-${props.color}-700 text-gray-100`
+            }`}
+          >
+            DONE
+          </div>
         </div>
       </div>
       <ProjectCardProgress
@@ -42,6 +64,7 @@ const ProjectCard: FC<ProjectCardProps> = (props) => {
         color={props.color}
         progress={props.progress}
         progressTotal={props.progressTotal}
+        done={props.done}
       />
     </div>
   );
@@ -53,6 +76,7 @@ ProjectCard.defaultProps = {
   color: 'teal',
   progress: 1,
   progressTotal: 2,
+  done: false,
 };
 
 export default ProjectCard;

@@ -4,6 +4,7 @@ interface ButtonProps {
   dark?: boolean;
   color?: string;
   label?: string;
+  small?: boolean;
   disabled?: boolean;
   onClick?: () => void;
   className?: string;
@@ -11,15 +12,15 @@ interface ButtonProps {
 
 /**
  * Force Tailwind to load classes for dark mode
- * bg-teal-400 hover:bg-teal-200 disabled:bg-teal-500 disabled:text-teal-700 active:border-teal-200 focus:border-teal-200 focus:outline-white
- * bg-blue-400 hover:bg-blue-200 disabled:bg-blue-500 disabled:text-blue-700 active:border-blue-200 focus:border-blue-200 focus:outline-white
- * bg-indigo-400 hover:bg-indigo-200 disabled:bg-indigo-500 disabled:text-indigo-700 active:border-indigo-200 focus:border-indigo-300 focus:outline-white
- * bg-purple-400 hover:bg-purple-200 disabled:bg-purple-500 disabled:text-purple-700 active:border-purple-200 focus:border-purple-300 focus:outline-white
- * bg-cerise-400 hover:bg-cerise-200 disabled:bg-cerise-500 disabled:text-cerise-700 active:border-cerise-200 focus:border-cerise-300 focus:outline-white
- * bg-coral-400 hover:bg-coral-200 disabled:bg-coral-500 disabled:text-coral-700 active:border-coral-200 focus:border-coral-300 focus:outline-white
- * bg-ochre-400 hover:bg-ochre-200 disabled:bg-ochre-500 disabled:text-ochre-700 active:border-ochre-200 focus:border-ochre-300 focus:outline-white
- * bg-gold-400 hover:bg-gold-200 disabled:bg-gold-500 disabled:text-gold-700 active:border-gold-200 focus:border-gold-300 focus:outline-white
- * bg-lime-400 hover:bg-lime-200 disabled:bg-lime-500 disabled:text-lime-700 active:border-lime-200 focus:border-lime-300 focus:outline-white
+ * text-teal-900 bg-teal-400 hover:bg-teal-200 disabled:bg-teal-500 disabled:text-teal-700 active:border-teal-200 focus:border-teal-200 focus:outline-white
+ * text-blue-900 bg-blue-400 hover:bg-blue-200 disabled:bg-blue-500 disabled:text-blue-700 active:border-blue-200 focus:border-blue-200 focus:outline-white
+ * text-indigo-900 bg-indigo-400 hover:bg-indigo-200 disabled:bg-indigo-500 disabled:text-indigo-700 active:border-indigo-200 focus:border-indigo-300 focus:outline-white
+ * text-purple-900 bg-purple-400 hover:bg-purple-200 disabled:bg-purple-500 disabled:text-purple-700 active:border-purple-200 focus:border-purple-300 focus:outline-white
+ * text-cerise-900 bg-cerise-400 hover:bg-cerise-200 disabled:bg-cerise-500 disabled:text-cerise-700 active:border-cerise-200 focus:border-cerise-300 focus:outline-white
+ * text-coral-900 bg-coral-400 hover:bg-coral-200 disabled:bg-coral-500 disabled:text-coral-700 active:border-coral-200 focus:border-coral-300 focus:outline-white
+ * text-ochre-900 bg-ochre-400 hover:bg-ochre-200 disabled:bg-ochre-500 disabled:text-ochre-700 active:border-ochre-200 focus:border-ochre-300 focus:outline-white
+ * text-gold-900 bg-gold-400 hover:bg-gold-200 disabled:bg-gold-500 disabled:text-gold-700 active:border-gold-200 focus:border-gold-300 focus:outline-white
+ * text-lime-900 bg-lime-400 hover:bg-lime-200 disabled:bg-lime-500 disabled:text-lime-700 active:border-lime-200 focus:border-lime-300 focus:outline-white
  * Force Tailwind to load classes for light mode
  * bg-teal-500 hover:bg-teal-700 disabled:bg-teal-300 disabled:text-teal-100 active:border-teal-500 focus:border-teal-600 focus:outline-black
  * bg-blue-500 hover:bg-blue-700 disabled:bg-blue-300 disabled:text-blue-100 active:border-blue-500 focus:border-blue-600 focus:outline-black
@@ -39,19 +40,19 @@ const Button: FC<ButtonProps> = (props): ReactElement => {
         ${props.className ? props.className : ''}
         font-sans 
         font-semibold 
-        text-base 
-        text-white 
-        px-10 py-3
+        ${props.small ? 'text-sm px-5 py-2' : 'text-base px-10 py-3'}
         rounded-lg
         disabled:cursor-not-allowed
         ${
           props.dark
-            ? `bg-${props.color}-400
+            ? `text-${props.color}-900
+                bg-${props.color}-400
                 hover:bg-${props.color}-200 
                 disabled:bg-${props.color}-500 disabled:text-${props.color}-700
                 active:border-${props.color}-200
                 focus:border-${props.color}-200 focus:outline-white`
-            : `bg-${props.color}-500 
+            : `text-white 
+                bg-${props.color}-500 
                 hover:bg-${props.color}-700 
                 disabled:bg-${props.color}-300 disabled:text-${props.color}-100
                 active:border-${props.color}-600
@@ -69,6 +70,7 @@ Button.defaultProps = {
   dark: false,
   color: 'teal',
   label: 'Ok',
+  small: false,
   disabled: false,
 };
 
