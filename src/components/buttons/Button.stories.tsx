@@ -150,6 +150,26 @@ export const Sizes = () => (
       <Button label={'Project lime'} color={'lime'} />
       <Button label={'Project lime'} color={'lime'} small />
     </div>
+    <div className="flex flex-col bg-gray-100 gap-4 p-4">
+      <Button label={'Project teal'} color={'teal'} outlined />
+      <Button label={'Project teal'} color={'teal'} small outlined />
+      <Button label={'Project blue'} color={'blue'} outlined />
+      <Button label={'Project blue'} color={'blue'} small outlined />
+      <Button label={'Project indigo'} color={'indigo'} outlined />
+      <Button label={'Project indigo'} color={'indigo'} small outlined />
+      <Button label={'Project purple'} color={'purple'} outlined />
+      <Button label={'Project purple'} color={'purple'} small outlined />
+      <Button label={'Project cerise'} color={'cerise'} outlined />
+      <Button label={'Project cerise'} color={'cerise'} small outlined />
+      <Button label={'Project coral'} color={'coral'} outlined />
+      <Button label={'Project coral'} color={'coral'} small outlined />
+      <Button label={'Project ochre'} color={'ochre'} outlined />
+      <Button label={'Project ochre'} color={'ochre'} small outlined />
+      <Button label={'Project gold'} color={'gold'} outlined />
+      <Button label={'Project gold'} color={'gold'} small outlined />
+      <Button label={'Project lime'} color={'lime'} outlined />
+      <Button label={'Project lime'} color={'lime'} small outlined />
+    </div>
     <div className="flex flex-col bg-gray-800 gap-4 md:grid-cols-4 p-4">
       <Button label={'Project teal'} color={'teal'} dark />
       <Button label={'Project teal'} color={'teal'} dark small />
@@ -169,6 +189,26 @@ export const Sizes = () => (
       <Button label={'Project gold'} color={'gold'} dark small />
       <Button label={'Project lime'} color={'lime'} dark />
       <Button label={'Project lime'} color={'lime'} dark small />
+    </div>
+    <div className="flex flex-col bg-gray-800 gap-4 md:grid-cols-4 p-4">
+      <Button label={'Project teal'} color={'teal'} dark outlined />
+      <Button label={'Project teal'} color={'teal'} dark small outlined />
+      <Button label={'Project blue'} color={'blue'} dark outlined />
+      <Button label={'Project blue'} color={'blue'} dark small outlined />
+      <Button label={'Project indigo'} color={'indigo'} dark outlined />
+      <Button label={'Project indigo'} color={'indigo'} dark small outlined />
+      <Button label={'Project purple'} color={'purple'} dark outlined />
+      <Button label={'Project purple'} color={'purple'} dark small outlined />
+      <Button label={'Project cerise'} color={'cerise'} dark outlined />
+      <Button label={'Project cerise'} color={'cerise'} dark small outlined />
+      <Button label={'Project coral'} color={'coral'} dark outlined />
+      <Button label={'Project coral'} color={'coral'} dark small outlined />
+      <Button label={'Project ochre'} color={'ochre'} dark outlined />
+      <Button label={'Project ochre'} color={'ochre'} dark small outlined />
+      <Button label={'Project gold'} color={'gold'} dark outlined />
+      <Button label={'Project gold'} color={'gold'} dark small outlined />
+      <Button label={'Project lime'} color={'lime'} dark outlined />
+      <Button label={'Project lime'} color={'lime'} dark small outlined />
     </div>
   </div>
 );

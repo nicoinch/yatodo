@@ -1,7 +1,8 @@
 import { FormEvent, useState } from 'react';
+import Loader from '../loader/Loader';
 import { useAllProjectsSubscription, useInsertProjectsMutation } from './../../generated';
 
-export const ProjectsList = () => {
+export const Projects = () => {
   const [result] = useAllProjectsSubscription();
   const [, insertProjects] = useInsertProjectsMutation();
   const [projectName, setProjectName] = useState('');
@@ -15,7 +16,7 @@ export const ProjectsList = () => {
   };
 
   if (!result.data) {
-    return <p>Loading...</p>;
+    return <Loader />;
   }
 
   console.log(result.data);
