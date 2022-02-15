@@ -1,6 +1,8 @@
 import React, { FC, ReactElement } from 'react';
 
 interface ButtonProps {
+  type?: 'button' | 'submit' | 'reset';
+  value?: string;
   dark?: boolean;
   outlined?: boolean;
   color?: string;
@@ -60,6 +62,8 @@ interface ButtonProps {
 const Button: FC<ButtonProps> = (props): ReactElement => {
   return (
     <button
+      type={props.type}
+      value={props.value}
       disabled={props.disabled}
       className={`
         ${props.className ? props.className : ''}
@@ -108,6 +112,8 @@ const Button: FC<ButtonProps> = (props): ReactElement => {
 };
 
 Button.defaultProps = {
+  type: 'button',
+  value: 'button',
   dark: false,
   outlined: false,
   color: 'teal',

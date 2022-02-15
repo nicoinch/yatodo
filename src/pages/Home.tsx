@@ -1,28 +1,53 @@
 import React, { FC, ReactComponentElement } from 'react';
-import { useAllProjectsSubscription, ProjectsFieldsFragment } from './../generated';
+import {
+  useActiveProjectsSubscription,
+  usePendingTasksSubscription,
+  ProjectsFieldsFragment,
+  TasksFieldsFragment,
+  useUpdateTasksMutation,
+} from './../generated';
 import Loader from '../components/loader/Loader';
 import Page from '../components/pages/Page';
 import ProjectsList from '../components/projects/ProjectsList';
 import SectionTitle from '../components/sections/SectionTitle';
+import { Link, Outlet, useNavigate } from 'react-router-dom';
+import TasksList from '../components/tasks/TasksList';
 
-interface HomeProps {}
+interface HomeProps {
+  dark?: boolean;
+}
 
-const Home: FC<HomeProps> = () => {
-  const [result] = useAllProjectsSubscription();
+const Home: FC<HomeProps> = (props) => {
+  const navigate = useNavigate();
+  const [resultProjects] = useActiveProjectsSubscription();
+  const [resultTasks] = usePendingTasksSubscription();
+  const [, updateTasks] = useUpdateTasksMutation();
 
   let header: ReactComponentElement<any>;
   let pageContent: ReactComponentElement<any>;
 
-  if (!result.data) {
+  const toggleTask = (task: TasksFieldsFragment): void => {
+    updateTasks({
+      id: task.id,
+      isDone: !task.is_done,
+    });
+  };
+  const createProject = (): void => {
+    navigate('/projects/new');
+  };
+
+  if (!resultProjects.data || !resultTasks.data) {
     header = <span>Loading data...</span>;
     pageContent = (
       <div className={'flex w-full h-full h-64 items-center justify-center'}>
-        <Loader />
+        <Loader dark={props.dark} />
       </div>
     );
   } else {
-    const activeProjectsCount = result.data.projects.filter((project) => project.is_active).length;
-    const pendingTasksCount = result.data.projects
+    const activeProjectsCount = resultProjects.data.projects.filter(
+      (project) => project.is_active,
+    ).length;
+    const pendingTasksCount = resultProjects.data.projects
       .filter((project: ProjectsFieldsFragment) => project.is_active)
       .reduce(
         (pendingTasksTotal, { progress, progressTotal }) =>
@@ -38,18 +63,52 @@ const Home: FC<HomeProps> = () => {
     );
     pageContent = (
       <div className={'flex flex-col gap-4'}>
-        <SectionTitle title={'Active projects'} />
-        <ProjectsList projects={result.data.projects} />
+        <SectionTitle
+          title={'Suggested active projects'}
+          buttonLabel={'Create a project'}
+          onButtonClick={createProject}
+          dark={props.dark}
+        />
+        <ProjectsList projects={resultProjects.data.projects} dark={props.dark} />
+        <Link to="/projects">
+          <span
+            className={`underline ${
+              props.dark ? `text-teal-400 hover:text-teal-200` : `text-teal-600 hover:text-teal-800`
+            }`}
+          >
+            View all projects
+          </span>
+        </Link>
+        <SectionTitle title={'Suggested pending tasks'} dark={props.dark} />
+        <TasksList tasks={resultTasks.data.tasks} onTaskClick={toggleTask} dark={props.dark} />
+        <Link to="/tasks">
+          <span
+            className={`underline ${
+              props.dark ? `text-teal-400 hover:text-teal-200` : `text-teal-600 hover:text-teal-800`
+            }`}
+          >
+            View all tasks
+          </span>
+        </Link>
       </div>
     );
   }
 
-  return <Page header={header} className={'flex-grow self-center'} content={pageContent} />;
+  return (
+    <div className={'flex flex-col flex-grow w-full relative'}>
+      <Page
+        header={header}
+        className={'flex-grow self-center'}
+        content={pageContent}
+        dark={props.dark}
+      />
+      <Outlet />
+    </div>
+  );
 };
 
 Home.defaultProps = {
   dark: false,
-  color: 'teal',
 };
 
 export default Home;

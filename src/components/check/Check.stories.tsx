@@ -25,7 +25,7 @@ export const Showcase = () => {
         <Check color={'ochre'} animate={animate} />
         <Check color={'gold'} animate={animate} />
         <Check color={'lime'} animate={animate} />
-        <Check color={'teal'} done />
+        <Check color={'teal'} animate={animate} done />
         <Check color={'blue'} done />
         <Check color={'indigo'} done />
         <Check color={'purple'} done />

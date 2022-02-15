@@ -27,7 +27,7 @@ interface ProjectCardProps {
 const ProjectCard: FC<ProjectCardProps> = (props) => {
   return (
     <div
-      className={`font-sans 
+      className={`font-sans flex flex-col
           ${props.className ? props.className : ''}
           ${
             props.dark
@@ -37,7 +37,7 @@ const ProjectCard: FC<ProjectCardProps> = (props) => {
               : props.done
               ? `bg-white text-gray-700 italic`
               : `bg-white text-${props.color}-700`
-          } rounded-xl w-full grid overflow-hidden relative`}
+          } rounded-xl w-full overflow-hidden relative`}
       onClick={props.onClick}
     >
       {props.done && (
@@ -47,8 +47,8 @@ const ProjectCard: FC<ProjectCardProps> = (props) => {
           } bg-gray-200 z-10`}
         />
       )}
-      <div className="p-3 pb-0">
-        <div className={`font-bold text-sm pb-6`}>{props.title}</div>
+      <div className="p-3 pb-0 flex flex-col h-full justify-between">
+        <div className={`font-bold text-base pb-6`}>{props.title}</div>
         <div className="flex w-full">
           <div className="flex-grow">
             <span className={`font-bold text-sm`}>

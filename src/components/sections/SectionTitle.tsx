@@ -21,11 +21,14 @@ interface SectionTitleProps {
  * text-ochre-400 text-ochre-600
  * text-gold-400 text-gold-600
  * text-lime-400 text-lime-600
+ * text-gray-400 text-gray-600
  */
 const SectionTitle: FC<SectionTitleProps> = (props): ReactElement => (
   <div className={'w-full flex justify-between items-center'}>
     <div
-      className={`text-lg ${props.dark ? `text-${props.color}-400` : `text-${props.color}-600`}`}
+      className={`font-semibold text-lg ${
+        props.dark ? `text-${props.color}-400` : `text-${props.color}-600`
+      }`}
     >
       {props.title}
     </div>

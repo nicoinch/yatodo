@@ -91,6 +91,7 @@ export const Showcase = () => {
         <SectionTitle title="Section title" color={'ochre'} dark />
         <SectionTitle title="Section title" color={'gold'} dark />
         <SectionTitle title="Section title" color={'lime'} dark />
+        <SectionTitle title="Section title" color={'gray'} dark />
         <SectionTitle title="Section title" onButtonClick={handleOnButtonClick} dark />
         <SectionTitle
           title="Section title"
@@ -144,6 +145,12 @@ export const Showcase = () => {
           title="Section title"
           onButtonClick={handleOnButtonClick}
           color={'lime'}
+          dark
+        />
+        <SectionTitle
+          title="Section title"
+          onButtonClick={handleOnButtonClick}
+          color={'gray'}
           dark
         />
       </div>

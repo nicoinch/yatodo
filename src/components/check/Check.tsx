@@ -59,10 +59,12 @@ const Check: FC<CheckProps> = (props): ReactElement => {
         </g>
         {(props.done || props.animate) && (
           <path
-            className={`${props.animate ? 'animate-check' : ''} stroke-4`}
+            className={`${
+              props.animate ? (props.done ? 'animate-check-reverse' : 'animate-check') : ''
+            } stroke-4`}
             d="M7,14.628L15,22.485L26,12"
             strokeDasharray={27}
-            strokeDashoffset={props.done ? 0 : 27}
+            strokeDashoffset={props.done && !props.animate ? 0 : 27}
             style={pathStyle}
           />
         )}

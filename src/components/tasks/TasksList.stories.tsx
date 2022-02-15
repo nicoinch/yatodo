@@ -14,12 +14,20 @@ const TASKS: TasksFieldsFragment[] = [
     is_done: false,
     content: 'Task 1',
     long_description: 'Task long description 1',
+    project: {
+      name: 'Project 1',
+      color: 'coral',
+    },
   },
   {
     id: 2,
     is_done: false,
     content: 'Task 2',
     long_description: 'Task long description 2',
+    project: {
+      name: 'Project 1',
+      color: 'indigo',
+    },
   },
 ];
 
@@ -35,6 +43,10 @@ export const AddTasks = () => {
         is_done: false,
         content: 'Task ' + (tasks.length + 1),
         long_description: 'Task long description' + (tasks.length + 1),
+        project: {
+          name: 'Project 1',
+          color: 'blue',
+        },
       },
     ]);
   };

@@ -1,4 +1,4 @@
-import React, { FC, ReactElement, useState } from 'react';
+import React, { FC, ReactElement, useState, useEffect } from 'react';
 import Check from '../check/Check';
 
 interface TaskItemProps {
@@ -23,15 +23,18 @@ interface TaskItemProps {
  * text-ochre-200 text-ochre-700
  * text-gold-200 text-gold-700
  * text-lime-200 text-lime-700
+ * text-gray-200 text-lime-700
  */
 const TaskItem: FC<TaskItemProps> = (props): ReactElement => {
   const [animate, setAnimate] = useState(false);
   const handleClick = () => {
-    if (!props.done) {
-      setAnimate(true);
-    }
+    setAnimate(true);
     props.onClick ? props.onClick() : null;
   };
+
+  useEffect(() => {
+    setAnimate(false);
+  }, [props.done]);
 
   return (
     <div
@@ -58,7 +61,7 @@ const TaskItem: FC<TaskItemProps> = (props): ReactElement => {
           done={props.done}
           animate={animate}
         />
-        <div className={'flex flex-col'}>
+        <div className={'flex flex-col h-full'}>
           {props.title && <div className={'font-bold text-base'}>{props.title}</div>}
           {props.text && <div className={'font-light text-sm flex-grow'}>{props.text}</div>}
           {props.info && <div className={'font-semibold text-xs mt-1'}>{props.info}</div>}

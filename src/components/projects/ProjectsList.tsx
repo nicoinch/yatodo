@@ -17,10 +17,7 @@ const ProjectsList: FC<ProjectsListProps> = (props) => {
     };
   };
   return (
-    <TransitionGroup
-      className="grid gap-2 md:gap-4 grid-cols-2 md:grid-cols-4 pb-6"
-      component="div"
-    >
+    <TransitionGroup className="grid gap-2 md:gap-4 grid-cols-2 md:grid-cols-4" component="div">
       {props.projects?.map((project) => (
         <CSSTransition
           key={project.id}
@@ -40,6 +37,7 @@ const ProjectsList: FC<ProjectsListProps> = (props) => {
             progress={project.progress.aggregate?.count}
             progressTotal={project.progressTotal.aggregate?.count}
             onClick={handleCardClick(project.id)}
+            dark={props.dark}
           />
         </CSSTransition>
       ))}

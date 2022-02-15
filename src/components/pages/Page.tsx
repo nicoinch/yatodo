@@ -26,12 +26,19 @@ const Page: FC<PageProps> = (props) => {
     <div
       className={`
           ${props.className ? props.className : ''}
+          ${props.dark ? `bg-black` : `bg-white`}
           h-full 
           w-full 
           flex flex-col items-center
           max-w-xxl`}
     >
-      <div className={`${props.dark ? `text-white` : `text-gray-700`} py-4`}>{props.header}</div>
+      <div
+        className={`${
+          props.dark ? `text-white bg-black` : `text-gray-700 bg-white`
+        } w-full py-4 text-center`}
+      >
+        {props.header}
+      </div>
       <div
         className={`
           ${props.className ? props.className : ''}

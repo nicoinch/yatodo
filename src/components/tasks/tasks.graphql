@@ -1,8 +1,12 @@
-fragment TasksFields on tasks {
+fragment tasksFields on tasks {
     content
     id
     long_description
     is_done
+    project {
+        color
+        name
+    }
 }
 
 mutation updateTasks ($id: Int!, $isDone: Boolean!) {
@@ -12,5 +16,25 @@ mutation updateTasks ($id: Int!, $isDone: Boolean!) {
     ) {
         id
         is_done
+    }
+}
+
+subscription pendingTasks {
+    tasks(order_by: {updated_at: desc}, where: {is_done: {_eq: false}}) {
+        ...tasksFields
+    }
+}
+
+subscription allTasks {
+    tasks(order_by: [{is_done: asc}, {updated_at: desc}]) {
+        ...tasksFields
+    }
+}
+
+mutation insertTasks ($content: String!, $longDescription: String!, $projectId: Int!) {
+    insert_tasks(objects: [{content: $content, long_description: $longDescription, is_done: false, project_id: $projectId}]) {
+        returning {
+            id
+        }
     }
 }

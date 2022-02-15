@@ -15,8 +15,14 @@ fragment projectsFields on projects {
     }
 }
 
+subscription activeProjects {
+    projects(order_by: {updated_at: desc}, where: {is_active: {_eq: true}}) {
+        ...projectsFields
+    }
+}
+
 subscription allProjects {
-    projects {
+    projects(order_by: [{is_active: desc}, {updated_at: desc}]) {
         ...projectsFields
     }
 }
@@ -49,15 +55,25 @@ fragment projectDetailsFields on projects  {
     is_active
     name
     pendingTasks: tasks(where: {is_done: {_eq: false}}) {
-        ...TasksFields
+        ...tasksFields
     }
     doneTasks: tasks(where: {is_done: {_eq: true}}) {
-        ...TasksFields
+        ...tasksFields
     }
 }
 
 subscription projectDetails ($projectId: Int!) {
     projects(where: {id: {_eq: $projectId}}) {
         ...projectDetailsFields
+    }
+}
+
+mutation updateProjects ($id: Int!, $isActive: Boolean!) {
+    update_projects_by_pk (
+        pk_columns: {id: $id}
+        _set: { is_active: $isActive }
+    ) {
+        id
+        is_active
     }
 }
