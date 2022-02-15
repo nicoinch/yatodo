@@ -1,14 +1,21 @@
 import React, { FC } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { TransitionGroup, CSSTransition } from 'react-transition-group';
 import ProjectCard from './ProjectCard';
-import { Projects } from './../../generated';
+import { ProjectsFieldsFragment } from './../../generated';
 
 interface ProjectsListProps {
   dark?: boolean;
-  projects?: Projects[];
+  projects?: Array<ProjectsFieldsFragment>;
 }
 
 const ProjectsList: FC<ProjectsListProps> = (props) => {
+  const navigate = useNavigate();
+  const handleCardClick = (projectId: number) => {
+    return () => {
+      navigate('/projects/' + projectId);
+    };
+  };
   return (
     <TransitionGroup
       className="grid gap-2 md:gap-4 grid-cols-2 md:grid-cols-4 pb-6"
@@ -25,7 +32,15 @@ const ProjectsList: FC<ProjectsListProps> = (props) => {
             exitActive: 'transition transition-all duration-200 opacity-0 translate-y-4',
           }}
         >
-          <ProjectCard title={project.name} color={project.color} />
+          <ProjectCard
+            className="hover:cursor-pointer"
+            title={project.name}
+            color={project.color}
+            done={!project.is_active}
+            progress={project.progress.aggregate?.count}
+            progressTotal={project.progressTotal.aggregate?.count}
+            onClick={handleCardClick(project.id)}
+          />
         </CSSTransition>
       ))}
     </TransitionGroup>

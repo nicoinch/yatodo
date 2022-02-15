@@ -263,7 +263,55 @@ type projects {
     """filter the rows returned"""
     where: tasks_bool_exp
   ): [tasks!]!
+
+  """An aggregate relationship"""
+  tasks_aggregate(
+    """distinct select on columns"""
+    distinct_on: [tasks_select_column!]
+
+    """limit the number of rows returned"""
+    limit: Int
+
+    """skip the first n rows. Use only with order_by"""
+    offset: Int
+
+    """sort the rows by one or more columns"""
+    order_by: [tasks_order_by!]
+
+    """filter the rows returned"""
+    where: tasks_bool_exp
+  ): tasks_aggregate!
   updated_at: timestamptz!
+}
+
+"""
+aggregated selection of "projects"
+"""
+type projects_aggregate {
+  aggregate: projects_aggregate_fields
+  nodes: [projects!]!
+}
+
+"""
+aggregate fields of "projects"
+"""
+type projects_aggregate_fields {
+  avg: projects_avg_fields
+  count(columns: [projects_select_column!], distinct: Boolean): Int!
+  max: projects_max_fields
+  min: projects_min_fields
+  stddev: projects_stddev_fields
+  stddev_pop: projects_stddev_pop_fields
+  stddev_samp: projects_stddev_samp_fields
+  sum: projects_sum_fields
+  var_pop: projects_var_pop_fields
+  var_samp: projects_var_samp_fields
+  variance: projects_variance_fields
+}
+
+"""aggregate avg on columns"""
+type projects_avg_fields {
+  id: Float
 }
 
 """
@@ -299,6 +347,24 @@ input projects_insert_input {
   is_active: Boolean
   name: String
   tasks: tasks_arr_rel_insert_input
+}
+
+"""aggregate max on columns"""
+type projects_max_fields {
+  color: String
+  created_at: timestamptz
+  id: Int
+  name: String
+  updated_at: timestamptz
+}
+
+"""aggregate min on columns"""
+type projects_min_fields {
+  color: String
+  created_at: timestamptz
+  id: Int
+  name: String
+  updated_at: timestamptz
 }
 
 """
@@ -379,6 +445,26 @@ input projects_set_input {
   name: String
 }
 
+"""aggregate stddev on columns"""
+type projects_stddev_fields {
+  id: Float
+}
+
+"""aggregate stddev_pop on columns"""
+type projects_stddev_pop_fields {
+  id: Float
+}
+
+"""aggregate stddev_samp on columns"""
+type projects_stddev_samp_fields {
+  id: Float
+}
+
+"""aggregate sum on columns"""
+type projects_sum_fields {
+  id: Int
+}
+
 """
 update columns of table "projects"
 """
@@ -391,6 +477,21 @@ enum projects_update_column {
 
   """column name"""
   name
+}
+
+"""aggregate var_pop on columns"""
+type projects_var_pop_fields {
+  id: Float
+}
+
+"""aggregate var_samp on columns"""
+type projects_var_samp_fields {
+  id: Float
+}
+
+"""aggregate variance on columns"""
+type projects_variance_fields {
+  id: Float
 }
 
 type query_root {
@@ -414,6 +515,26 @@ type query_root {
     where: projects_bool_exp
   ): [projects!]!
 
+  """
+  fetch aggregated fields from the table: "projects"
+  """
+  projects_aggregate(
+    """distinct select on columns"""
+    distinct_on: [projects_select_column!]
+
+    """limit the number of rows returned"""
+    limit: Int
+
+    """skip the first n rows. Use only with order_by"""
+    offset: Int
+
+    """sort the rows by one or more columns"""
+    order_by: [projects_order_by!]
+
+    """filter the rows returned"""
+    where: projects_bool_exp
+  ): projects_aggregate!
+
   """fetch data from the table: "projects" using primary key columns"""
   projects_by_pk(id: Int!): projects
 
@@ -434,6 +555,24 @@ type query_root {
     """filter the rows returned"""
     where: tasks_bool_exp
   ): [tasks!]!
+
+  """An aggregate relationship"""
+  tasks_aggregate(
+    """distinct select on columns"""
+    distinct_on: [tasks_select_column!]
+
+    """limit the number of rows returned"""
+    limit: Int
+
+    """skip the first n rows. Use only with order_by"""
+    offset: Int
+
+    """sort the rows by one or more columns"""
+    order_by: [tasks_order_by!]
+
+    """filter the rows returned"""
+    where: tasks_bool_exp
+  ): tasks_aggregate!
 
   """fetch data from the table: "tasks" using primary key columns"""
   tasks_by_pk(id: Int!): tasks
@@ -460,6 +599,26 @@ type subscription_root {
     where: projects_bool_exp
   ): [projects!]!
 
+  """
+  fetch aggregated fields from the table: "projects"
+  """
+  projects_aggregate(
+    """distinct select on columns"""
+    distinct_on: [projects_select_column!]
+
+    """limit the number of rows returned"""
+    limit: Int
+
+    """skip the first n rows. Use only with order_by"""
+    offset: Int
+
+    """sort the rows by one or more columns"""
+    order_by: [projects_order_by!]
+
+    """filter the rows returned"""
+    where: projects_bool_exp
+  ): projects_aggregate!
+
   """fetch data from the table: "projects" using primary key columns"""
   projects_by_pk(id: Int!): projects
 
@@ -481,6 +640,24 @@ type subscription_root {
     where: tasks_bool_exp
   ): [tasks!]!
 
+  """An aggregate relationship"""
+  tasks_aggregate(
+    """distinct select on columns"""
+    distinct_on: [tasks_select_column!]
+
+    """limit the number of rows returned"""
+    limit: Int
+
+    """skip the first n rows. Use only with order_by"""
+    offset: Int
+
+    """sort the rows by one or more columns"""
+    order_by: [tasks_order_by!]
+
+    """filter the rows returned"""
+    where: tasks_bool_exp
+  ): tasks_aggregate!
+
   """fetch data from the table: "tasks" using primary key columns"""
   tasks_by_pk(id: Int!): tasks
 }
@@ -499,6 +676,31 @@ type tasks {
   project: projects!
   project_id: Int!
   updated_at: timestamptz!
+}
+
+"""
+aggregated selection of "tasks"
+"""
+type tasks_aggregate {
+  aggregate: tasks_aggregate_fields
+  nodes: [tasks!]!
+}
+
+"""
+aggregate fields of "tasks"
+"""
+type tasks_aggregate_fields {
+  avg: tasks_avg_fields
+  count(columns: [tasks_select_column!], distinct: Boolean): Int!
+  max: tasks_max_fields
+  min: tasks_min_fields
+  stddev: tasks_stddev_fields
+  stddev_pop: tasks_stddev_pop_fields
+  stddev_samp: tasks_stddev_samp_fields
+  sum: tasks_sum_fields
+  var_pop: tasks_var_pop_fields
+  var_samp: tasks_var_samp_fields
+  variance: tasks_variance_fields
 }
 
 """
@@ -526,6 +728,12 @@ input tasks_arr_rel_insert_input {
 
   """on conflict condition"""
   on_conflict: tasks_on_conflict
+}
+
+"""aggregate avg on columns"""
+type tasks_avg_fields {
+  id: Float
+  project_id: Float
 }
 
 """
@@ -579,6 +787,16 @@ input tasks_insert_input {
   project_id: Int
 }
 
+"""aggregate max on columns"""
+type tasks_max_fields {
+  content: String
+  created_at: timestamptz
+  id: Int
+  long_description: String
+  project_id: Int
+  updated_at: timestamptz
+}
+
 """
 order by max() on columns of table "tasks"
 """
@@ -589,6 +807,16 @@ input tasks_max_order_by {
   long_description: order_by
   project_id: order_by
   updated_at: order_by
+}
+
+"""aggregate min on columns"""
+type tasks_min_fields {
+  content: String
+  created_at: timestamptz
+  id: Int
+  long_description: String
+  project_id: Int
+  updated_at: timestamptz
 }
 
 """
@@ -676,12 +904,24 @@ input tasks_set_input {
   project_id: Int
 }
 
+"""aggregate stddev on columns"""
+type tasks_stddev_fields {
+  id: Float
+  project_id: Float
+}
+
 """
 order by stddev() on columns of table "tasks"
 """
 input tasks_stddev_order_by {
   id: order_by
   project_id: order_by
+}
+
+"""aggregate stddev_pop on columns"""
+type tasks_stddev_pop_fields {
+  id: Float
+  project_id: Float
 }
 
 """
@@ -692,12 +932,24 @@ input tasks_stddev_pop_order_by {
   project_id: order_by
 }
 
+"""aggregate stddev_samp on columns"""
+type tasks_stddev_samp_fields {
+  id: Float
+  project_id: Float
+}
+
 """
 order by stddev_samp() on columns of table "tasks"
 """
 input tasks_stddev_samp_order_by {
   id: order_by
   project_id: order_by
+}
+
+"""aggregate sum on columns"""
+type tasks_sum_fields {
+  id: Int
+  project_id: Int
 }
 
 """
@@ -725,6 +977,12 @@ enum tasks_update_column {
   project_id
 }
 
+"""aggregate var_pop on columns"""
+type tasks_var_pop_fields {
+  id: Float
+  project_id: Float
+}
+
 """
 order by var_pop() on columns of table "tasks"
 """
@@ -733,12 +991,24 @@ input tasks_var_pop_order_by {
   project_id: order_by
 }
 
+"""aggregate var_samp on columns"""
+type tasks_var_samp_fields {
+  id: Float
+  project_id: Float
+}
+
 """
 order by var_samp() on columns of table "tasks"
 """
 input tasks_var_samp_order_by {
   id: order_by
   project_id: order_by
+}
+
+"""aggregate variance on columns"""
+type tasks_variance_fields {
+  id: Float
+  project_id: Float
 }
 
 """

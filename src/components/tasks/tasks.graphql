@@ -1,0 +1,16 @@
+fragment TasksFields on tasks {
+    content
+    id
+    long_description
+    is_done
+}
+
+mutation updateTasks ($id: Int!, $isDone: Boolean!) {
+    update_tasks_by_pk (
+        pk_columns: {id: $id}
+        _set: { is_done: $isDone }
+    ) {
+        id
+        is_done
+    }
+}

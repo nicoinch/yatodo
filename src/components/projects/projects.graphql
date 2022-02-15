@@ -1,3 +1,26 @@
+fragment projectsFields on projects {
+    id
+    name
+    color
+    is_active
+    progress: tasks_aggregate(where: {is_done: {_eq: true}}) {
+        aggregate {
+            count
+        }
+    }
+    progressTotal: tasks_aggregate {
+        aggregate {
+            count
+        }
+    }
+}
+
+subscription allProjects {
+    projects {
+        ...projectsFields
+    }
+}
+
 query projects {
     projects {
         id
@@ -20,11 +43,21 @@ mutation insertProjects ($name: String!, $color: String!) {
     }
 }
 
-subscription allProjects {
-    projects {
-        id
-        is_active
-        name
-        color
+fragment projectDetailsFields on projects  {
+    color
+    id
+    is_active
+    name
+    pendingTasks: tasks(where: {is_done: {_eq: false}}) {
+        ...TasksFields
+    }
+    doneTasks: tasks(where: {is_done: {_eq: true}}) {
+        ...TasksFields
+    }
+}
+
+subscription projectDetails ($projectId: Int!) {
+    projects(where: {id: {_eq: $projectId}}) {
+        ...projectDetailsFields
     }
 }

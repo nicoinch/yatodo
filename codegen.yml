@@ -9,3 +9,4 @@ generates:
       - "typescript-urql"
     config:
       withHooks: true
+      withHooksOperations: true

@@ -20,32 +20,36 @@ interface ProjectCardProgressProps {
  * bg-gold-200 bg-gold-700
  * bg-lime-200 bg-lime-700
  */
-const ProjectCardProgress: FC<ProjectCardProgressProps> = (props): ReactElement => {
-  let progress: ReactElement = <span />;
-  if (props.progress && props.progressTotal) {
-    progress = (
-      <div
-        className={`h-1 w-full font-light relative ${props.dark ? `bg-gray-600` : `bg-gray-200`}
+const ProjectCardProgress: FC<ProjectCardProgressProps> = ({
+  dark,
+  color,
+  progressTotal = 1,
+  progress = 0,
+  done,
+}): ReactElement => {
+  return (
+    <div
+      className={`h-1 w-full font-light relative ${dark ? `bg-gray-600` : `bg-gray-200`}
         `}
-      >
-        <div
-          className={`h-1 absolute ${
-            props.dark
-              ? props.done
-                ? 'bg-gray-200'
-                : `bg-${props.color}-200`
-              : props.done
-              ? 'bg-gray-700'
-              : `bg-${props.color}-700`
-          }`}
-          style={{
-            width: `${(props?.progress / props?.progressTotal) * 100}%`,
-          }}
-        />
-      </div>
-    );
-  }
-  return progress;
+    >
+      <div
+        className={`h-1 absolute ${
+          dark
+            ? done
+              ? 'bg-gray-200'
+              : `bg-${color}-200`
+            : done
+            ? 'bg-gray-700'
+            : `bg-${color}-700`
+        }`}
+        style={{
+          width: `${
+            progressTotal !== 0 ? Math.floor((progress / progressTotal) * 100) + '%' : '0%'
+          }`,
+        }}
+      />
+    </div>
+  );
 };
 
 ProjectCardProgress.defaultProps = {

@@ -7,8 +7,9 @@ import './index.css';
 import logoDark from './images/logo-dark.png';
 import logoLight from './images/logo-light.png';
 import Home from './pages/Home';
-import { Projects } from './components/projects/Projects';
+import Project from './pages/Project';
 import reportWebVitals from './reportWebVitals';
+import { Projects } from './components/projects/Projects';
 
 const wsClient = createWSClient({
   url: 'ws://hiring-nicolas-2.hasura.app/v1/graphql',
@@ -41,7 +42,7 @@ ReactDOM.render(
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="projects" element={<Projects />} />
-            <Route path="projects" element={<Projects />} />
+            <Route path="projects/:projectId" element={<Project />} />
           </Routes>
         </BrowserRouter>
       </div>

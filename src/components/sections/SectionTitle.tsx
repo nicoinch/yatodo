@@ -5,6 +5,7 @@ interface SectionTitleProps {
   dark?: boolean;
   color?: string;
   title?: string;
+  buttonLabel?: string;
   onButtonClick?: () => void;
   className?: string;
 }
@@ -30,6 +31,7 @@ const SectionTitle: FC<SectionTitleProps> = (props): ReactElement => (
     </div>
     {props.onButtonClick && (
       <Button
+        label={props.buttonLabel}
         onClick={props.onButtonClick}
         className={''}
         dark={props.dark}
@@ -44,6 +46,7 @@ SectionTitle.defaultProps = {
   dark: false,
   color: 'teal',
   title: 'Section',
+  buttonLabel: 'Add',
 };
 
 export default SectionTitle;

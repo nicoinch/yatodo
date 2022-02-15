@@ -5,6 +5,7 @@ interface PageProps {
   color?: string;
   content?: ReactComponentElement<any>;
   className?: string;
+  header?: ReactComponentElement<any>;
 }
 
 /**
@@ -24,15 +25,25 @@ const Page: FC<PageProps> = (props) => {
   return (
     <div
       className={`
-        ${props.className ? props.className : ''}
-        h-full 
-        w-full 
-        p-4 
-        rounded-t-xxl 
-        max-w-xxl
-        ${props.dark ? `bg-${props.color}-800` : `bg-${props.color}-100`}`}
+          ${props.className ? props.className : ''}
+          h-full 
+          w-full 
+          flex flex-col items-center
+          max-w-xxl`}
     >
-      {props.content}
+      <div className={`${props.dark ? `text-white` : `text-gray-700`} py-4`}>{props.header}</div>
+      <div
+        className={`
+          ${props.className ? props.className : ''}
+          h-full
+          w-full
+          p-4
+          rounded-t-xxl
+          max-w-xxl
+          ${props.dark ? `bg-${props.color}-800` : `bg-${props.color}-100`}`}
+      >
+        {props.content}
+      </div>
     </div>
   );
 };

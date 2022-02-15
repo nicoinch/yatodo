@@ -1,4 +1,4 @@
-import React, { FC, ReactElement } from 'react';
+import React, { FC, ReactElement, useState } from 'react';
 import Check from '../check/Check';
 
 interface TaskItemProps {
@@ -8,6 +8,8 @@ interface TaskItemProps {
   title?: string;
   text?: string;
   info?: string;
+  onClick?: () => void;
+  className?: string;
 }
 
 /**
@@ -23,9 +25,19 @@ interface TaskItemProps {
  * text-lime-200 text-lime-700
  */
 const TaskItem: FC<TaskItemProps> = (props): ReactElement => {
+  const [animate, setAnimate] = useState(false);
+  const handleClick = () => {
+    if (!props.done) {
+      setAnimate(true);
+    }
+    props.onClick ? props.onClick() : null;
+  };
+
   return (
     <div
-      className={`font-sans 
+      className={`
+          font-sans 
+          ${props.className ? props.className : ''}
           ${
             props.dark
               ? props.done
@@ -35,14 +47,16 @@ const TaskItem: FC<TaskItemProps> = (props): ReactElement => {
               ? `bg-white text-gray-700 italic`
               : `bg-white text-${props.color}-700`
           } rounded-xl w-full overflow-hidden relative p-3`}
+      onClick={handleClick}
     >
-      {props.done && <div className="absolute inset-0 opacity-50 bg-gray-200 z-10" />}
+      {props.done && <div className="absolute inset-0 opacity-25 bg-gray-200 z-10" />}
       <div className={'flex gap-3 h-full items-start'}>
         <Check
           className={'flex-shrink-0 relative z-20'}
           color={props.color}
           dark={props.dark}
           done={props.done}
+          animate={animate}
         />
         <div className={'flex flex-col'}>
           {props.title && <div className={'font-bold text-base'}>{props.title}</div>}

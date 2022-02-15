@@ -8,6 +8,8 @@ interface ProjectCardProps {
   progress?: number;
   progressTotal?: number;
   done?: boolean;
+  onClick?: () => void;
+  className?: string;
 }
 
 /**
@@ -26,6 +28,7 @@ const ProjectCard: FC<ProjectCardProps> = (props) => {
   return (
     <div
       className={`font-sans 
+          ${props.className ? props.className : ''}
           ${
             props.dark
               ? props.done
@@ -35,6 +38,7 @@ const ProjectCard: FC<ProjectCardProps> = (props) => {
               ? `bg-white text-gray-700 italic`
               : `bg-white text-${props.color}-700`
           } rounded-xl w-full grid overflow-hidden relative`}
+      onClick={props.onClick}
     >
       {props.done && (
         <div

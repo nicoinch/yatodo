@@ -19,8 +19,6 @@ export const Projects = () => {
     return <Loader />;
   }
 
-  console.log(result.data);
-
   return (
     <div className="w-full">
       <ul>

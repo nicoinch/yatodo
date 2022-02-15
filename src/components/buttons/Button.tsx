@@ -46,16 +46,16 @@ interface ButtonProps {
  * bg-lime-500 hover:bg-lime-700 active:border-lime-500 focus:border-lime-600 focus:outline-black
  * bg-gray-500 hover:bg-gray-700 active:border-gray-500 focus:border-gray-600 focus:outline-black
  * Force Tailwind to load classes for light mode outlined
- * bg-teal-500 border-teal-600 hover:bg-teal-100
- * bg-blue-500 border-blue-600 hover:bg-blue-100
- * bg-indigo-500 border-indigo-600 hover:bg-indigo-100
- * bg-purple-500 border-purple-600 hover:bg-purple-100
- * bg-cerise-500 border-cerise-600 hover:bg-cerise-100
- * bg-coral-500 border-coral-600 hover:bg-coral-100
- * bg-ochre-500 border-ochre-600 hover:bg-ochre-100
- * bg-gold-500 border-gold-600 hover:bg-gold-100
- * bg-lime-500 border-lime-600 hover:bg-lime-100
- * bg-gray-500 border-gray-600 hover:bg-gray-100
+ * bg-teal-500 border-teal-600 hover:bg-teal-200
+ * bg-blue-500 border-blue-600 hover:bg-blue-200
+ * bg-indigo-500 border-indigo-600 hover:bg-indigo-200
+ * bg-purple-500 border-purple-600 hover:bg-purple-200
+ * bg-cerise-500 border-cerise-600 hover:bg-cerise-200
+ * bg-coral-500 border-coral-600 hover:bg-coral-200
+ * bg-ochre-500 border-ochre-600 hover:bg-ochre-200
+ * bg-gold-500 border-gold-600 hover:bg-gold-200
+ * bg-lime-500 border-lime-600 hover:bg-lime-200
+ * bg-gray-500 border-gray-600 hover:bg-gray-200
  */
 const Button: FC<ButtonProps> = (props): ReactElement => {
   return (
@@ -74,6 +74,7 @@ const Button: FC<ButtonProps> = (props): ReactElement => {
           props.dark
             ? props.outlined
               ? `border
+                bg-gray-900
                 text-${props.color}-300
                 border-${props.color}-300
                 hover:bg-${props.color}-900 
@@ -86,9 +87,10 @@ const Button: FC<ButtonProps> = (props): ReactElement => {
                 focus:border-${props.color}-200 focus:outline-white`
             : props.outlined
             ? `border
+                bg-white
                 text-${props.color}-600
                 border-${props.color}-600
-                hover:bg-${props.color}-100
+                hover:bg-${props.color}-200
                 active:border-3
                 focus:border-3`
             : `text-white

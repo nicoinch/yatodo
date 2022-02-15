@@ -1,5 +1,5 @@
-import React, { FC, ReactElement, useState } from 'react';
-import { theme } from '../../../tailwind.config';
+import React, { FC, ReactElement } from 'react';
+import { theme } from '../../tailwind.config';
 import './Check.css';
 
 interface CheckProps {
@@ -15,6 +15,26 @@ const Check: FC<CheckProps> = (props): ReactElement => {
     props.color = 'teil';
   }
 
+  const colors = theme.extend.colors[props.color];
+  const fillColor = colors ? colors[props.dark ? '300' : '600'] : undefined;
+  const strokeColor = colors ? colors[props.dark ? '200' : '700'] : undefined;
+
+  const svgStyle: React.CSSProperties = {
+    clipRule: 'evenodd',
+    strokeLinecap: 'round',
+    strokeLinejoin: 'round',
+    strokeMiterlimit: 1.5,
+  };
+  const pathStyle: React.CSSProperties = {
+    fill: 'none',
+    stroke: props.done
+      ? props.dark
+        ? theme.extend.colors['gray']['500']
+        : theme.extend.colors['gray']['100']
+      : strokeColor,
+    strokeLinejoin: 'miter',
+  };
+
   return (
     <div className={`${props.className ? props.className : ''} self-start w-10 h-10 ver`}>
       <svg
@@ -23,14 +43,7 @@ const Check: FC<CheckProps> = (props): ReactElement => {
         viewBox="0 0 32 32"
         version="1.1"
         xmlns="http://www.w3.org/2000/svg"
-        style={
-          {
-            'clip-rule': 'evenodd',
-            'stroke-linecap': 'round',
-            'stroke-linejoin': 'round',
-            'stroke-miterlimit': 1.5,
-          } as React.CSSProperties
-        }
+        style={svgStyle}
       >
         <g transform="matrix(0.966611,0,0,0.967111,0.566396,0.551205)">
           <circle
@@ -39,16 +52,8 @@ const Check: FC<CheckProps> = (props): ReactElement => {
             cy="16"
             r="16"
             style={{
-              fill: props.done
-                ? props.dark
-                  ? theme.extend.colors[props.color]!['300']
-                  : theme.extend.colors[props.color]!['600']
-                : 'none',
-              stroke: props.done
-                ? 'none'
-                : props.dark
-                ? theme.extend.colors[props.color]!['200']
-                : theme.extend.colors[props.color]!['700'],
+              fill: props.done ? fillColor : 'none',
+              stroke: props.done ? 'none' : strokeColor,
             }}
           />
         </g>
@@ -56,21 +61,9 @@ const Check: FC<CheckProps> = (props): ReactElement => {
           <path
             className={`${props.animate ? 'animate-check' : ''} stroke-4`}
             d="M7,14.628L15,22.485L26,12"
-            stroke-dasharray={27}
-            stroke-dashoffset={props.done ? 0 : 27}
-            style={
-              {
-                fill: 'none',
-                stroke: props.done
-                  ? props.dark
-                    ? theme.extend.colors['gray']['500']
-                    : theme.extend.colors['gray']['100']
-                  : props.dark
-                  ? theme.extend.colors[props.color]!['200']
-                  : theme.extend.colors[props.color]!['700'],
-                'stroke-linejoin': 'miter',
-              } as React.CSSProperties
-            }
+            strokeDasharray={27}
+            strokeDashoffset={props.done ? 0 : 27}
+            style={pathStyle}
           />
         )}
       </svg>

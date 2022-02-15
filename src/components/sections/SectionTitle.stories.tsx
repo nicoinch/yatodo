@@ -21,16 +21,65 @@ export const Showcase = () => {
         <SectionTitle title="Section title" color={'ochre'} />
         <SectionTitle title="Section title" color={'gold'} />
         <SectionTitle title="Section title" color={'lime'} />
-        <SectionTitle title="Section title" onButtonClick={handleOnButtonClick} />
-        <SectionTitle title="Section title" onButtonClick={handleOnButtonClick} color={'teal'} />
-        <SectionTitle title="Section title" onButtonClick={handleOnButtonClick} color={'blue'} />
-        <SectionTitle title="Section title" onButtonClick={handleOnButtonClick} color={'indigo'} />
-        <SectionTitle title="Section title" onButtonClick={handleOnButtonClick} color={'purple'} />
-        <SectionTitle title="Section title" onButtonClick={handleOnButtonClick} color={'cerise'} />
-        <SectionTitle title="Section title" onButtonClick={handleOnButtonClick} color={'coral'} />
-        <SectionTitle title="Section title" onButtonClick={handleOnButtonClick} color={'ochre'} />
-        <SectionTitle title="Section title" onButtonClick={handleOnButtonClick} color={'gold'} />
-        <SectionTitle title="Section title" onButtonClick={handleOnButtonClick} color={'lime'} />
+        <SectionTitle
+          title="Section title"
+          onButtonClick={handleOnButtonClick}
+          buttonLabel={'Button label'}
+        />
+        <SectionTitle
+          title="Section title"
+          onButtonClick={handleOnButtonClick}
+          color={'teal'}
+          buttonLabel={'Button teal'}
+        />
+        <SectionTitle
+          title="Section title"
+          onButtonClick={handleOnButtonClick}
+          color={'blue'}
+          buttonLabel={'Button blue'}
+        />
+        <SectionTitle
+          title="Section title"
+          onButtonClick={handleOnButtonClick}
+          color={'indigo'}
+          buttonLabel={'Button indigo'}
+        />
+        <SectionTitle
+          title="Section title"
+          onButtonClick={handleOnButtonClick}
+          color={'purple'}
+          buttonLabel={'Button purple'}
+        />
+        <SectionTitle
+          title="Section title"
+          onButtonClick={handleOnButtonClick}
+          color={'cerise'}
+          buttonLabel={'Button cerise'}
+        />
+        <SectionTitle
+          title="Section title"
+          onButtonClick={handleOnButtonClick}
+          color={'coral'}
+          buttonLabel={'Button coral'}
+        />
+        <SectionTitle
+          title="Section title"
+          onButtonClick={handleOnButtonClick}
+          color={'ochre'}
+          buttonLabel={'Button ochre'}
+        />
+        <SectionTitle
+          title="Section title"
+          onButtonClick={handleOnButtonClick}
+          color={'gold'}
+          buttonLabel={'Button gold'}
+        />
+        <SectionTitle
+          title="Section title"
+          onButtonClick={handleOnButtonClick}
+          color={'lime'}
+          buttonLabel={'Button lime'}
+        />
       </div>
       <div className="flex flex-col bg-gray-800 gap-4 p-4 w-1/2">
         <SectionTitle title="Section title" color={'teal'} dark />

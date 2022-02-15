@@ -1,76 +1,125 @@
 import React, { useState } from 'react';
 import ProjectsList from './ProjectsList';
 import Button from '../buttons/Button';
-import { Projects } from '../../generated';
+import { ProjectsFieldsFragment, Tasks } from '../../generated';
 
 export default {
   title: 'Projects list',
   component: ProjectsList,
 };
 
-const PROJECTS: Projects[] = [
+const PROJECTS: ProjectsFieldsFragment[] = [
   {
     id: 1,
     is_active: true,
     name: 'Project 1',
     color: 'cerise',
-    created_at: '2020-01-01T00:00:00Z',
-    updated_at: '2020-01-01T00:00:00Z',
-    tasks: [],
+    progress: {
+      aggregate: {
+        count: 3,
+      },
+    },
+    progressTotal: {
+      aggregate: {
+        count: 4,
+      },
+    },
   },
   {
     id: 2,
     is_active: false,
     name: 'Project 2',
     color: 'indigo',
-    created_at: '2020-01-01T00:00:00Z',
-    updated_at: '2020-01-01T00:00:00Z',
-    tasks: [],
+    progress: {
+      aggregate: {
+        count: 2,
+      },
+    },
+    progressTotal: {
+      aggregate: {
+        count: 5,
+      },
+    },
   },
   {
     id: 3,
     is_active: true,
     name: 'Project 3',
     color: 'coral',
-    created_at: '2020-01-01T00:00:00Z',
-    updated_at: '2020-01-01T00:00:00Z',
-    tasks: [],
+    progress: {
+      aggregate: {
+        count: 1,
+      },
+    },
+    progressTotal: {
+      aggregate: {
+        count: 4,
+      },
+    },
   },
   {
     id: 4,
     is_active: true,
     name: 'Project 4',
     color: 'lime',
-    created_at: '2020-01-01T00:00:00Z',
-    updated_at: '2020-01-01T00:00:00Z',
-    tasks: [],
+    progress: {
+      aggregate: {
+        count: 0,
+      },
+    },
+    progressTotal: {
+      aggregate: {
+        count: 3,
+      },
+    },
   },
   {
     id: 5,
     is_active: true,
     name: 'Project 5',
     color: 'indigo',
-    created_at: '2020-01-01T00:00:00Z',
-    updated_at: '2020-01-01T00:00:00Z',
-    tasks: [],
+    progress: {
+      aggregate: {
+        count: 0,
+      },
+    },
+    progressTotal: {
+      aggregate: {
+        count: 0,
+      },
+    },
   },
   {
     id: 6,
     is_active: true,
     name: 'Project 6',
     color: 'purple',
-    created_at: '2020-01-01T00:00:00Z',
-    updated_at: '2020-01-01T00:00:00Z',
-    tasks: [],
+    progress: {
+      aggregate: {
+        count: 3,
+      },
+    },
+    progressTotal: {
+      aggregate: {
+        count: 4,
+      },
+    },
   },
   {
     id: 7,
     is_active: true,
     name: 'Project 7',
     color: 'gold',
-    created_at: '2020-01-01T00:00:00Z',
-    updated_at: '2020-01-01T00:00:00Z',
-    tasks: [],
+    progress: {
+      aggregate: {
+        count: 3,
+      },
+    },
+    progressTotal: {
+      aggregate: {
+        count: 4,
+      },
+    },
   },
 ];
 
@@ -88,9 +137,16 @@ export const AddProjects = () => {
         color: ['teal', 'lime', 'blue', 'purple', 'indigo', 'cerise', 'ochre', 'coral', 'gold'][
           (projects.length + 1) % 9
         ],
-        created_at: '2020-01-01T00:00:00Z',
-        updated_at: '2020-01-01T00:00:00Z',
-        tasks: [],
+        progress: {
+          aggregate: {
+            count: 3,
+          },
+        },
+        progressTotal: {
+          aggregate: {
+            count: 4,
+          },
+        },
       },
     ]);
   };
