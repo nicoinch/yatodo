@@ -36,7 +36,7 @@ import LogoGithub from "./images/docs/logo-github.svg";
 
 # Welcome to YATODO
 
-**YATODO** is a single page web application developed to address the
+**YATODO** (yet another todo) is a single page web application developed to address the
 [**Hasura recruitment exercise**](https://hasura.io/careers/). It is a simple todo list management application. It is
 based on the provided  **hiring-nicolas-2** graphql schema.
 
@@ -67,7 +67,7 @@ Access directly to wireframes, source code and running application :
 
 The wireframes has been realized using [Figma](https://www.figma.com/file/zAjZ8n1OuPbNpjgMbUVzIn/YATODO?node-id=0%3A1)
 designed for the occasion, inspired by Hasura visual identity. To ease the design process, Tailwind design tokens have
-been imported into Figma. A light theme and a dark theme are available.
+been imported into Figma. A **light theme** and a **dark theme** are available.
 
 ## Colors palette
 
@@ -88,7 +88,7 @@ based on the Hasura primary color. It is easely reusable in a Tailwind CSS proje
 
 ## Components
 
-No component libray has been used, only needed components have been designed and implemented to reduce the work load.
+No components libray has been used, only needed components have been designed and implemented to reduce the work load.
 
 <div
   style={{
@@ -104,7 +104,7 @@ No component libray has been used, only needed components have been designed and
 
 ## Wireframes
 
-The components have been designed first in isolation, then indluded on mobile screens. Only the light dashboard has been
+The components have been designed first in isolation, then included on mobile screens. Only the light dashboard has been
 designed for desktop.
 
 <div
@@ -163,30 +163,30 @@ designed for desktop.
   </a>
 </div>
 
-- **Figma** to design the compoenents and application,
-- **Typescript** to benefit from the type checking
-- **React** the framework to develop web application,
+- **Figma** to design the components and application,
+- **Typescript** to benefit from the type checking,
+- **React** framework to develop web applications,
 - **Tailwind** to benefit utility classes and styles,
 - **Graphql** to store data  and benefit from the query language,
 - **Hasura** for its great graphql implementation,
-- **Graphql** code generator, to generate the code to easily interact with the database,
+- **Graphql** code generator, to generate the code and easily interact with the database,
 - **Storybook** the workshop for developing web application components and more,
-- **Github** for source code management,
+- **Github** for source code management and Storybook hosting,
 - **Firebase** to host the web application and API.
 
 # Features
 
 ### Business features:
 
-The todo list is composed by projets regrouping tasks. Each project has a name and color and can be active or archived.
-Each task has a content and a ling description.
+The todo list is composed by projects regrouping tasks. Each project has a name and color and can be **active** or **archived**.
+Each task has a content and a long description and can be **undone** or **done**.
 
 - **Dashboard**, with recent active projects and pending tasks, tasks can be marked as done,
-- **Projects list**, with all active and archived projects, tasks can be marked as done or undone,
+- **Projects list**, with all active and archived projects,
 - **Tasks list**, with all pending and done tasks, tasks can be marked as done or undone,
 - **Project page**, with all tasks of the project, with a button to archive or unarchive a project,
 - **Project creation**, with random project color generation,
-- **Task creation**, with random task color generation.
+- **Task creation**.
 
 ### Design features:
 
@@ -205,4 +205,4 @@ design**](https://bradfrost.com/blog/post/atomic-web-design/) granularity (âš›ï¸
 
 **Code generation** for graphql has been extensively used to generate **React hooks** (subscriptions and mutations) and **Typescript types** (fragments).
 
-The style is defined with **Tailwind utility classes**. Tailwind design tokens are sometimes used to customize SVG.
+The style is defined with **Tailwind utility classes**. Tailwind design tokens are sometimes used to customize SVG style and behaviour.

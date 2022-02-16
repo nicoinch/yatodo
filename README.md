@@ -4,7 +4,7 @@
 
 # Welcome to YATODO
 
-**YATODO** is a single page web application developed to address
+**YATODO** (yet another todo) is a single page web application developed to address
 the [**Hasura recruitment exercise**](https://hasura.io/careers/).
 
 View full documentation on Storybook:
