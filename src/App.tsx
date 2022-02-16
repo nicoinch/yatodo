@@ -16,32 +16,34 @@ function App() {
   const [dark, setDark] = React.useState(false);
 
   return (
-    <div className={dark ? 'bg-black' : 'bg-white'}>
+    <div className={`${dark ? 'bg-black' : 'bg-white'} h-full`}>
       <div
-        className={`min-h-screen flex flex-col justify-center relative max-w-xxl mx-auto ${
+        className={`min-h-screen flex flex-col items-center justify-center relative ${
           dark ? 'bg-black' : 'bg-white'
         }`}
       >
-        {location.pathname !== '/' && (
+        <div className={`max-w-xxl w-full relative`}>
+          {location.pathname !== '/' && (
+            <Button
+              className={'absolute top-0 left-0 m-4'}
+              dark={dark}
+              color={'gray'}
+              label={'< Go back'}
+              outlined
+              small
+              onClick={() => window.history.back()}
+            />
+          )}
           <Button
-            className={'absolute top-0 left-0 m-4'}
+            className={'absolute top-0 right-0 m-4'}
             dark={dark}
             color={'gray'}
-            label={'Go back'}
+            label={dark ? 'Go light' : 'Go dark'}
             outlined
             small
-            onClick={() => window.history.back()}
+            onClick={() => setDark(!dark)}
           />
-        )}
-        <Button
-          className={'absolute top-0 right-0 m-4'}
-          dark={dark}
-          color={'gray'}
-          label={dark ? 'Go light' : 'Go dark'}
-          outlined
-          small
-          onClick={() => setDark(!dark)}
-        />
+        </div>
         <div className={'flex justify-center w-full'}>
           <Link to={'/'}>
             <img className={'w-32'} src={dark ? logoDark : logoLight} alt="logo" />

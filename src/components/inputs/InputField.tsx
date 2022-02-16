@@ -12,8 +12,8 @@ interface InputFieldProps extends InputHTMLAttributes<HTMLInputElement> {
   className?: string;
 }
 
-/**
- * Force Tailwind to load classes for dark mode
+/*
+ * Force Tailwind to load classes
  * text-teal-400 bg-teal-900 border-teal-400 placeholder-teal-500
  * text-blue-400 bg-blue-900 border-blue-400 placeholder-blue-500
  * text-indigo-400 bg-indigo-900 border-indigo-400 placeholder-indigo-500
@@ -23,7 +23,7 @@ interface InputFieldProps extends InputHTMLAttributes<HTMLInputElement> {
  * text-ochre-400 bg-ochre-900 border-ochre-400 placeholder-ochre-500
  * text-gold-400 bg-gold-900 border-gold-400 placeholder-gold-500
  * text-lime-400 bg-lime-900 border-lime-400 placeholder-lime-500
- * Force Tailwind to load classes for light mode
+ * Force Tailwind to load classes
  * text-teal-700 border-teal-300 text-teal-900
  * text-blue-700 border-blue-300 text-blue-900
  * text-indigo-700 border-indigo-300 text-indigo-900

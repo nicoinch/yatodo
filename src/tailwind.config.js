@@ -132,10 +132,13 @@ module.exports = {
         4: '4px',
       },
       borderRadius: {
-        xl: '2rem',
+        xxl: '2rem',
       },
       rotate: {
         315: '315deg',
+      },
+      maxWidth: {
+        xxl: '1024px',
       },
     },
   },

@@ -20,7 +20,7 @@ mutation updateTasks ($id: Int!, $isDone: Boolean!) {
 }
 
 subscription pendingTasks {
-    tasks(order_by: {updated_at: desc}, where: {is_done: {_eq: false}}) {
+    tasks(order_by: {updated_at: desc}, where: {is_done: {_eq: false}}, limit: 8) {
         ...tasksFields
     }
 }

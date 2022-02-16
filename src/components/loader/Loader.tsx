@@ -6,7 +6,7 @@ interface LoaderProps {
   color?: string;
 }
 
-/**
+/*
  * Force Tailwind to load classes
  * bg-teal-400 bg-teal-600
  * bg-blue-400 bg-blue-600

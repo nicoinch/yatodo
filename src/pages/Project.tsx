@@ -76,7 +76,7 @@ const Project: FC<ProjectProps> = (props) => {
       header = (
         <span>
           <strong>{project.pendingTasks.length} pending tasks</strong> and{' '}
-          <strong>{project.doneTasks.length} done tasks</strong>
+          <strong>{project.doneTasks.length} done tasks</strong> in this project
         </span>
       );
       pageContent = (

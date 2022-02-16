@@ -1,0 +1,208 @@
+import { Meta } from "@storybook/addon-docs/blocks";
+import YatodoLogo from "./images/logo-light.svg";
+import ColorsPalette from "./images/docs/ColorsPalette.png";
+import Components from "./images/docs/Components.png";
+import DesktopWireframe from "./images/docs/DesktopWireframe.png";
+import MobileWireframe from "./images/docs/MobileWireframe.png";
+import LogoTypescript from "./images/docs/logo-typescript.svg";
+import LogoReact from "./images/docs/logo-react.svg";
+import LogoTailwind from "./images/docs/logo-tailwind.svg";
+import LogoGraphql from "./images/docs/logo-graphql.svg";
+import LogoHasura from "./images/docs/logo-hasura.svg";
+import LogoCodeGenerator from "./images/docs/logo-codegenerator.svg";
+import LogoStorybook from "./images/docs/logo-storybook.png";
+import LogoFigma from "./images/docs/logo-figma.svg";
+import LogoFirebase from "./images/docs/logo-firebase.svg";
+import LogoGithub from "./images/docs/logo-github.svg";
+
+<Meta title="🎉 ReadMe" />
+
+<style>{`
+  .center {
+    margin: 0 auto;
+  }
+`}</style>
+
+<div
+  style={{
+    display: "flex",
+    justifyContent: "center",
+    height: "128px",
+    marginBottom: "2rem",
+  }}
+>
+  <img src={YatodoLogo} />
+</div>
+
+# Welcome to YATODO
+
+**YATODO** is a single page web application developed to address the
+[**Hasura recruitment exercise**](https://hasura.io/careers/). It is a simple todo list management application. It is
+based on the provided  **hiring-nicolas-2** graphql schema.
+
+Access directly to wireframes, source code and running application :
+
+<div
+  style={{
+    display: "flex",
+    flexDirection: "row",
+    gap: "2rem",
+    height: "48px",
+    marginBottom: "2rem",
+  }}
+>
+  <a href="https://www.figma.com/file/zAjZ8n1OuPbNpjgMbUVzIn/YATODO?node-id=0%3A1" target={'_blank'}>
+    <img src="https://storage.googleapis.com/nicoinch-public/yatodo-button-wireframes.svg" title={"Wirefrmaes"} style={{ height: '48px', maxWidth: 'auto'}} />
+  </a>
+  <a href="https://github.com/nicoinch/yatodo" target={'_blank'}>
+    <img src="https://storage.googleapis.com/nicoinch-public/yatodo-button-sources.svg" title={"Source code"} style={{ height: '48px', maxWidth: 'auto'}} />
+  </a>
+  <a href="https://nicolasinchauspe.web.app/" target={'_blank'}>
+    <img src="https://storage.googleapis.com/nicoinch-public/yatodo-button-app.svg" title={"Running application"} style={{ height: '48px', maxWidth: 'auto'}} />
+  </a>
+</div>
+
+
+# Design
+
+The wireframes has been realized using [Figma](https://www.figma.com/file/zAjZ8n1OuPbNpjgMbUVzIn/YATODO?node-id=0%3A1)
+designed for the occasion, inspired by Hasura visual identity. To ease the design process, Tailwind design tokens have
+been imported into Figma. A light theme and a dark theme are available.
+
+## Colors palette
+
+The colors palette has been generated thanks to [TailwindInk](https://tailwind.ink?p=9.f1f7f7d5f0f8a5e3f06ec6db1eb4d42786a3226d891e536b16384d0e2335f6f9fbe1f0fcc1dbf996b9f06d92e5566edc4752cc373daa262a7d161a4ff7fafbe8f0fccfd7f9aab3f08b8ae57266dd5e4acc4737ab31267c1c184dfbfbfbf7eff7f0cfefdfa5dbd878c3c653aeac3990852b6d5e1e48371327fcfbfbfaf0f2f5cfe4e9a3c7e474a5d55087bc366795294b6a1c3140121bfcfbf9fbf0e2f6d3c3eaa994e17a66d05744b53d2d8e2e236420193e140ffbfaf6f9f0cbf3da97e1b463cb8839b0671f924d14703a114d280e32190afbfaf4f8efbbf0dd7fd9b94db890299870147b570d5e410c402d0b2b1c08f7f8f2eff0d2dae3a0aec46a6da03d4f83213f6b1633511424371119220d)
+based on the Hasura primary color. It is easely reusable in a Tailwind CSS project.
+
+<div
+  style={{
+    display: "flex",
+    justifyContent: "center",
+    gap: "2rem",
+    height: "256px",
+    marginBottom: "2rem",
+  }}
+>
+  <img src={ColorsPalette} />
+</div>
+
+## Components
+
+No component libray has been used, only needed components have been designed and implemented to reduce the work load.
+
+<div
+  style={{
+    display: "flex",
+    justifyContent: "center",
+    gap: "2rem",
+    height: "312px",
+    marginBottom: "2rem",
+  }}
+>
+  <img src={Components} />
+</div>
+
+## Wireframes
+
+The components have been designed first in isolation, then indluded on mobile screens. Only the light dashboard has been
+designed for desktop.
+
+<div
+  style={{
+    display: "flex",
+    justifyContent: "center",
+    gap: "2rem",
+    height: "384px",
+    marginBottom: "2rem",
+  }}
+>
+  <img src={MobileWireframe} />
+  <img src={DesktopWireframe} />
+</div>
+
+# Technologies
+
+<div
+  style={{
+    display: "flex",
+    flexDirection: "row",
+    gap: "2rem",
+    height: "48px",
+    marginBottom: "2rem",
+  }}
+>
+  <a href={"https://www.figma.com/"} target={'_blank'}>
+    <img src={LogoFigma} title={"Figma"} style={{ height: '48px', maxWidth: 'auto'}} />
+  </a>
+  <a href={"https://www.typescriptlang.org/"} target={'_blank'}>
+    <img src={LogoTypescript} title={"Typescript"} style={{ height: '48px', maxWidth: 'auto'}} />
+  </a>
+  <a href={"https://reactjs.org/"} target={'_blank'}>
+    <img src={LogoReact} title={"React"} style={{ height: '48px', maxWidth: 'auto'}} />
+  </a>
+    <a href={"https://tailwindcss.com/"} target={'_blank'}>
+    <img src={LogoTailwind} title={"Tailwind"} style={{ height: '48px', maxWidth: 'auto'}} />
+  </a>
+  <a href={"https://graphql.org/"} target={'_blank'}>
+    <img src={LogoGraphql} title={"Graphql"} style={{ height: '48px', maxWidth: 'auto'}} />
+  </a>
+  <a href={"https://hasura.io/"} target={'_blank'}>
+    <img src={LogoHasura} title={"Hasura"} style={{ height: '48px', maxWidth: 'auto'}} />
+  </a>
+  <a href={"https://www.graphql-code-generator.com/"} target={'_blank'}>
+    <img src={LogoCodeGenerator} title={"Graphql code generator"} style={{ height: '48px', maxWidth: 'auto'}} />
+  </a>
+  <a href={"https://storybook.js.org/"} target={'_blank'}>
+    <img src={LogoStorybook} title={"Storybook"} style={{ height: '48px', maxWidth: 'auto'}} />
+  </a>
+  <a href={"https://github.com"} target={'_blank'}>
+    <img src={LogoGithub} title={"Github"} style={{ height: '48px', maxWidth: 'auto'}} />
+  </a>
+  <a href={"https://firebase.google.com/"} target={'_blank'}>
+    <img src={LogoFirebase} title={"Firebase"} style={{ height: '48px', maxWidth: 'auto'}} />
+  </a>
+</div>
+
+- **Figma** to design the compoenents and application,
+- **Typescript** to benefit from the type checking
+- **React** the framework to develop web application,
+- **Tailwind** to benefit utility classes and styles,
+- **Graphql** to store data  and benefit from the query language,
+- **Hasura** for its great graphql implementation,
+- **Graphql** code generator, to generate the code to easily interact with the database,
+- **Storybook** the workshop for developing web application components and more,
+- **Github** for source code management,
+- **Firebase** to host the web application and API.
+
+# Features
+
+### Business features:
+
+The todo list is composed by projets regrouping tasks. Each project has a name and color and can be active or archived.
+Each task has a content and a ling description.
+
+- **Dashboard**, with recent active projects and pending tasks, tasks can be marked as done,
+- **Projects list**, with all active and archived projects, tasks can be marked as done or undone,
+- **Tasks list**, with all pending and done tasks, tasks can be marked as done or undone,
+- **Project page**, with all tasks of the project, with a button to archive or unarchive a project,
+- **Project creation**, with random project color generation,
+- **Task creation**, with random task color generation.
+
+### Design features:
+
+It is possible to switch between the **light** and **dark** theme.
+
+**Custom logo** and **loader** have been designed and implemented.
+
+**Accessibility** has been taken into account (see Storybook a11y addon for testing, some colors are not accessible
+but have been left as is).
+
+# Standards applied for development
+
+Components are named according to the design pattern they address.
+In storybook sidebar, they are prefixed with an emoji indicating whether they are an emoji according to their [**atomic
+design**](https://bradfrost.com/blog/post/atomic-web-design/) granularity (⚛️ atom, 🧬 molecule, 🦠 organism, 📰 template, 📄 page)
+
+**Code generation** for graphql has been extensively used to generate **React hooks** (subscriptions and mutations) and **Typescript types** (fragments).
+
+The style is defined with **Tailwind utility classes**. Tailwind design tokens are sometimes used to customize SVG.

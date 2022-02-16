@@ -13,8 +13,8 @@ interface ButtonProps {
   className?: string;
 }
 
-/**
- * Force Tailwind to load classes for dark mode
+/*
+ * Force Tailwind to load classes
  * text-teal-900 bg-teal-400 hover:bg-teal-200 active:border-teal-200 focus:border-teal-200 focus:outline-white
  * text-blue-900 bg-blue-400 hover:bg-blue-200 active:border-blue-200 focus:border-blue-200 focus:outline-white
  * text-indigo-900 bg-indigo-400 hover:bg-indigo-200 active:border-indigo-200 focus:border-indigo-300 focus:outline-white
@@ -25,7 +25,7 @@ interface ButtonProps {
  * text-gold-900 bg-gold-400 hover:bg-gold-200 active:border-gold-200 focus:border-gold-300 focus:outline-white
  * text-lime-900 bg-lime-400 hover:bg-lime-200 active:border-lime-200 focus:border-lime-300 focus:outline-white
  * text-gray-900 bg-gray-400 hover:bg-gray-200 active:border-gray-200 focus:border-gray-300 focus:outline-white
- * Force Tailwind to load classes for dark mode outlined
+ * Force Tailwind to load classes
  * text-teal-300 border-teal-300 bg-teal-700 hover:bg-teal-900
  * text-blue-300 border-blue-300 bg-blue-700 hover:bg-blue-900
  * text-indigo-300 border-indigo-300 bg-indigo-700 hover:bg-indigo-900
@@ -36,7 +36,7 @@ interface ButtonProps {
  * text-gold-300 border-gold-300 bg-gold-700 hover:bg-gold-900
  * text-lime-300 border-lime-300 bg-lime-700 hover:bg-lime-900
  * text-gray-300 border-gray-300 bg-gray-700 hover:bg-gray-900
- * Force Tailwind to load classes for light mode
+ * Force Tailwind to load classes
  * bg-teal-500 hover:bg-teal-700 active:border-teal-500 focus:border-teal-600 focus:outline-black
  * bg-blue-500 hover:bg-blue-700 active:border-blue-500 focus:border-blue-600 focus:outline-black
  * bg-indigo-500 hover:bg-indigo-700 active:border-indigo-500 focus:border-indigo-600 focus:outline-black
@@ -47,7 +47,7 @@ interface ButtonProps {
  * bg-gold-500 hover:bg-gold-700 active:border-gold-500 focus:border-gold-600 focus:outline-black
  * bg-lime-500 hover:bg-lime-700 active:border-lime-500 focus:border-lime-600 focus:outline-black
  * bg-gray-500 hover:bg-gray-700 active:border-gray-500 focus:border-gray-600 focus:outline-black
- * Force Tailwind to load classes for light mode outlined
+ * Force Tailwind to load classes
  * bg-teal-500 border-teal-600 hover:bg-teal-200
  * bg-blue-500 border-blue-600 hover:bg-blue-200
  * bg-indigo-500 border-indigo-600 hover:bg-indigo-200

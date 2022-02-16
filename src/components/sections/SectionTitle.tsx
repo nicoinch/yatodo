@@ -10,8 +10,8 @@ interface SectionTitleProps {
   className?: string;
 }
 
-/**
- * Force Tailwind to load classes for dark mode
+/*
+ * Force Tailwind to load classes
  * text-teal-400 text-teal-600
  * text-blue-400 text-blue-600
  * text-indigo-400 text-indigo-600

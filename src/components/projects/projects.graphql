@@ -16,7 +16,7 @@ fragment projectsFields on projects {
 }
 
 subscription activeProjects {
-    projects(order_by: {updated_at: desc}, where: {is_active: {_eq: true}}) {
+    projects(order_by: {updated_at: desc}, where: {is_active: {_eq: true}}, limit: 8) {
         ...projectsFields
     }
 }

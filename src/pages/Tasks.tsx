@@ -30,7 +30,7 @@ const Tasks: FC<TasksProps> = (props) => {
   if (!result.data) {
     header = <span>Loading data...</span>;
     pageContent = (
-      <div className={'flex w-full h-full h-64 items-center justify-center'}>
+      <div className={'flex w-full h-64 items-center justify-center'}>
         <Loader dark={props.dark} />
       </div>
     );
@@ -39,7 +39,7 @@ const Tasks: FC<TasksProps> = (props) => {
     const doneTasksCount = result.data.tasks.length - activeTasksCount;
     header = (
       <span>
-        <strong>{activeTasksCount} pending tasks</strong> with{' '}
+        <strong>{activeTasksCount} pending tasks</strong> &&nbsp;
         <strong>{doneTasksCount} done tasks</strong>
       </span>
     );

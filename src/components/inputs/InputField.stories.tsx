@@ -2,7 +2,7 @@ import React, { useState, ChangeEvent } from 'react';
 import InputField from './InputField';
 
 export default {
-  label: 'InputField',
+  title: 'Components/ 🧬 InputField',
   component: InputField,
 };
 

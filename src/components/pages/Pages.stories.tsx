@@ -3,7 +3,7 @@ import Page from './Page';
 import SectionTitle from '../sections/SectionTitle';
 
 export default {
-  label: 'Page',
+  title: 'Components/ 🧬 Page',
   component: Page,
 };
 

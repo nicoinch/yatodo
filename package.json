@@ -1,9 +1,10 @@
 {
-  "name": "hasura-todo-app",
+  "name": "yatodo",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
     "@babel/core": "7.17.2",
+    "@storybook/storybook-deployer": "2.8.10",
     "@testing-library/jest-dom": "^5.14.1",
     "@testing-library/react": "^12.0.0",
     "@testing-library/user-event": "^13.2.1",
@@ -33,7 +34,8 @@
     "lint:fix": "eslint --fix",
     "format": "prettier --write './**/*.{js,jsx,ts,tsx,css,md,mdx,json}' --config ./.prettierrc",
     "generate": "graphql-codegen --config codegen.yml",
-    "storybook": "start-storybook -p 60010"
+    "storybook": "start-storybook -p 60010",
+    "deploy-storybook": "storybook-to-ghpages"
   },
   "eslintConfig": {
     "extends": [
@@ -59,6 +61,8 @@
     "@graphql-codegen/typescript": "2.4.3",
     "@graphql-codegen/typescript-operations": "2.3.0",
     "@graphql-codegen/typescript-urql": "3.5.1",
+    "@storybook/addon-a11y": "6.4.19",
+    "@storybook/addon-docs": "6.4.19",
     "@storybook/addon-postcss": "2.0.0",
     "@storybook/react": "6.4.18",
     "@types/react-transition-group": "4.4.4",

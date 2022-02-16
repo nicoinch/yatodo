@@ -13,7 +13,7 @@ interface TasksListProps {
   className?: string;
 }
 
-/**
+/*
  * Force Tailwind to load classes:
  * text-teal-400 text-teal-600
  * text-blue-400 text-blue-600
@@ -55,10 +55,10 @@ const TasksList: FC<TasksListProps> = (props) => {
           key={task.id}
           timeout={200}
           classNames={{
-            enter: 'opacity-0 translate-y-4',
-            enterActive: 'transition transition-all duration-200 opacity-100 translate-y-0',
-            exit: 'opacity-100 translate-y-0',
-            exitActive: 'transition transition-all duration-200 opacity-0 translate-y-4',
+            enter: 'opacity-0',
+            enterActive: 'transition transition-all duration-200 opacity-100 scale-105 ease-in',
+            exit: 'opacity-100',
+            exitActive: 'transition transition-all duration-200 opacity-0 scale-95 ease-out',
           }}
         >
           <TaskItem

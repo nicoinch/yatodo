@@ -76,7 +76,7 @@ const Home: FC<HomeProps> = (props) => {
               props.dark ? `text-teal-400 hover:text-teal-200` : `text-teal-600 hover:text-teal-800`
             }`}
           >
-            View all projects
+            View all projects &gt;
           </span>
         </Link>
         <SectionTitle title={'Suggested pending tasks'} dark={props.dark} />
@@ -87,7 +87,7 @@ const Home: FC<HomeProps> = (props) => {
               props.dark ? `text-teal-400 hover:text-teal-200` : `text-teal-600 hover:text-teal-800`
             }`}
           >
-            View all tasks
+            View all tasks &gt;
           </span>
         </Link>
       </div>

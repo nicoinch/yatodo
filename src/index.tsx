@@ -8,7 +8,7 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 
 const wsClient = createWSClient({
-  url: 'ws://hiring-nicolas-2.hasura.app/v1/graphql',
+  url: 'wss://hiring-nicolas-2.hasura.app/v1/graphql',
 });
 
 const client = createClient({

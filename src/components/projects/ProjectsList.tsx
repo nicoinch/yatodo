@@ -21,12 +21,11 @@ const ProjectsList: FC<ProjectsListProps> = (props) => {
       {props.projects?.map((project) => (
         <CSSTransition
           key={project.id}
-          timeout={200}
+          timeout={300}
           classNames={{
-            enter: 'opacity-0 translate-y-4',
-            enterActive: 'transition transition-all duration-200 opacity-100 translate-y-0',
-            exit: 'opacity-100 translate-y-0',
-            exitActive: 'transition transition-all duration-200 opacity-0 translate-y-4',
+            enterActive: 'transition transition-all duration-200 opacity-100 scale-105 ease-in',
+            exit: 'opacity-100',
+            exitActive: 'transition transition-all duration-200 opacity-0 scale-95 ease-out',
           }}
         >
           <ProjectCard

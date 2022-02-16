@@ -12,7 +12,7 @@ interface ProjectCardProps {
   className?: string;
 }
 
-/**
+/*
  * Force Tailwind to load classes:
  * bg-teal-100 bg-teal-300 bg-teal-600 text-teal-200 text-teal-700
  * bg-blue-100 bg-blue-300 bg-blue-600 text-blue-200 text-blue-700

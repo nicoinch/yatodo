@@ -2,7 +2,7 @@ import React from 'react';
 import Check from './Check';
 
 export default {
-  title: 'Check',
+  title: 'Components/ ⚛️ Check',
   component: Check,
 };
 

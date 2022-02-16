@@ -12,7 +12,7 @@ interface TaskItemProps {
   className?: string;
 }
 
-/**
+/*
  * Force Tailwind to load classes:
  * text-teal-200 text-teal-700
  * text-blue-200 text-blue-700
@@ -62,8 +62,10 @@ const TaskItem: FC<TaskItemProps> = (props): ReactElement => {
           animate={animate}
         />
         <div className={'flex flex-col h-full'}>
-          {props.title && <div className={'font-bold text-base'}>{props.title}</div>}
-          {props.text && <div className={'font-light text-sm flex-grow'}>{props.text}</div>}
+          <div className={'flex-grow'}>
+            {props.title && <div className={'font-bold text-base'}>{props.title}</div>}
+            {props.text && <div className={'font-light text-sm flex-grow'}>{props.text}</div>}
+          </div>
           {props.info && <div className={'font-semibold text-xs mt-1'}>{props.info}</div>}
         </div>
       </div>

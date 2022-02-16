@@ -8,8 +8,8 @@ interface PageProps {
   header?: ReactComponentElement<any>;
 }
 
-/**
- * Force Tailwind to load classes for dark mode
+/*
+ * Force Tailwind to load classes
  * bg-teal-100 bg-teal-800
  * bg-blue-100 bg-blue-800
  * bg-indigo-100 bg-indigo-800
@@ -27,8 +27,7 @@ const Page: FC<PageProps> = (props) => {
       className={`
           ${props.className ? props.className : ''}
           ${props.dark ? `bg-black` : `bg-white`}
-          h-full 
-          w-full 
+          w-full max-w-xxl
           flex flex-col items-center
           max-w-xxl`}
     >
@@ -45,6 +44,7 @@ const Page: FC<PageProps> = (props) => {
           h-full
           w-full
           p-4
+          pb-6
           rounded-t-xxl
           max-w-xxl
           ${props.dark ? `bg-${props.color}-800` : `bg-${props.color}-100`}`}

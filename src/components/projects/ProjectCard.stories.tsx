@@ -2,7 +2,7 @@ import React from 'react';
 import ProjectCard from './ProjectCard';
 
 export default {
-  title: 'Project card',
+  title: 'Components / 🧬  Project card',
   component: ProjectCard,
 };
 

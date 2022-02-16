@@ -4,7 +4,7 @@ import Button from '../buttons/Button';
 import { TasksFieldsFragment, Tasks } from '../../generated';
 
 export default {
-  title: 'Tasks list',
+  title: 'Components / 🦠 Tasks list',
   component: TasksList,
 };
 

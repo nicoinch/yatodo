@@ -8,7 +8,7 @@ interface ProjectCardProgressProps {
   done?: boolean;
 }
 
-/**
+/*
  * Force Tailwind to load classes:
  * bg-teal-200 bg-teal-700
  * bg-blue-200 bg-blue-700
