@@ -55,8 +55,3 @@ yarn storybook
 ```
 yarn deploy-storybook
 ```
-
-## Get the graphql schema
-
-To get the graphql schema, run:
-`gq https://hiring-nicolas-2.hasura.app/v1/graphql --introspect --format json > schema.json`

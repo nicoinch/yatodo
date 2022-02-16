@@ -35,7 +35,7 @@
     "format": "prettier --write './**/*.{js,jsx,ts,tsx,css,md,mdx,json}' --config ./.prettierrc",
     "generate": "graphql-codegen --config codegen.yml",
     "storybook": "start-storybook -p 60010",
-    "deploy-storybook": "storybook-to-ghpages"
+    "deploy-storybook": "storybook-to-ghpages --source-branch main"
   },
   "eslintConfig": {
     "extends": [
